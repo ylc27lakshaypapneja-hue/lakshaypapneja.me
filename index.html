@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lakshay Papneja</title>
-  <meta name="description" content="Systems engineer building distributed scrapers, autonomous agent infrastructure, and MCP tooling.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Lakshay Papneja — Systems Engineer & Data Architect</title>
+  <meta name="description" content="Systems engineer building autonomous data infrastructure, real-time web intelligence engines, and native Model Context Protocol ecosystems.">
   <meta name="author" content="Lakshay Papneja">
-  <meta name="theme-color" content="#08090a">
+  <meta name="theme-color" content="#0a0a0b">
   <link rel="canonical" href="https://lakshaypapneja.me/">
 
   <!-- OpenGraph & Twitter -->
-  <meta property="og:title" content="Lakshay Papneja">
-  <meta property="og:description" content="Systems engineer building distributed scrapers, autonomous agent infrastructure, and MCP tooling.">
-  <meta property="og:url" content="https://lakshaypapneja.me/">
   <meta property="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Lakshay Papneja">
-  <meta name="twitter:description" content="Systems engineer building distributed scrapers, autonomous agent infrastructure, and MCP tooling.">
+  <meta property="og:url" content="https://lakshaypapneja.me/">
+  <meta property="og:title" content="Lakshay Papneja — Systems Engineer">
+  <meta property="og:description" content="Systems engineer building autonomous data infrastructure, 24 public monetized actors, and native MCP tooling. Scroll to fly through the systems.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Lakshay Papneja — Systems Engineer">
+  <meta name="twitter:description" content="Autonomous data infrastructure, real-time web scrapers, and agent protocols.">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%2308090a'/><path d='M9 8h4v12h10v4H9z' fill='%23f7f8f8'/></svg>">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0b'/><path d='M8 7h4v14h12v4H8z' fill='%23f2f2f2'/></svg>">
 
   <!-- Schema.org for AX / SEO -->
   <script type="application/ld+json">
@@ -28,7 +28,7 @@
     "@type": "Person",
     "name": "Lakshay Papneja",
     "url": "https://lakshaypapneja.me",
-    "jobTitle": "Systems Engineer",
+    "jobTitle": "Systems Engineer & Data Architect",
     "worksFor": {
       "@type": "Organization",
       "name": "Scrapers.tech",
@@ -42,326 +42,490 @@
   }
   </script>
 
-  <style>
-    :root {
-      --bg: #08090a;
-      --surface: #101214;
-      --border: rgba(255, 255, 255, 0.08);
-      --border-hover: rgba(255, 255, 255, 0.18);
-      --text: #f7f8f8;
-      --muted: #8a8f98;
-      --subtle: #4e535a;
-      --accent: #5e6ad2;
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      --font-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
-    }
+  <!-- Google Fonts Preconnect -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-sans);
-      font-size: 15px;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 72px 24px 96px;
-    }
-
-    main {
-      width: 100%;
-      max-width: 620px;
-      display: flex;
-      flex-direction: column;
-      gap: 56px;
-    }
-
-    /* Header */
-    header {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    h1 {
-      font-size: 20px;
-      font-weight: 500;
-      letter-spacing: -0.02em;
-      color: var(--text);
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .status-dot {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: #27c93f;
-      box-shadow: 0 0 8px rgba(39, 201, 63, 0.6);
-    }
-
-    .intro {
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.55;
-    }
-
-    /* Section structure */
-    section {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    h2 {
-      font-size: 12px;
-      font-family: var(--font-mono);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: var(--subtle);
-      font-weight: 500;
-    }
-
-    /* Work List */
-    .list {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .item {
-      display: block;
-      padding: 14px 16px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      text-decoration: none;
-      color: inherit;
-      transition: border-color 140ms ease, background-color 140ms ease;
-    }
-
-    .item:hover {
-      border-color: var(--border-hover);
-      background: #14171a;
-    }
-
-    .item:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    .item-header {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 4px;
-    }
-
-    .item-title {
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--text);
-    }
-
-    .item-meta {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .item-desc {
-      font-size: 13.5px;
-      color: var(--muted);
-      line-height: 1.45;
-    }
-
-    /* Notes / Principles */
-    .notes {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .note {
-      padding: 12px 16px;
-      border-left: 2px solid var(--border);
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.5;
-    }
-
-    .note strong {
-      color: var(--text);
-      font-weight: 500;
-    }
-
-    /* Contact Links */
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px 24px;
-    }
-
-    .links a {
-      color: var(--muted);
-      text-decoration: none;
-      font-size: 13.5px;
-      font-family: var(--font-mono);
-      transition: color 120ms ease;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    .links a:hover {
-      color: var(--text);
-    }
-
-    .links a:focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 2px;
-    }
-
-    /* Footer */
-    footer {
-      margin-top: 24px;
-      padding-top: 24px;
-      border-top: 1px solid var(--border);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 12px;
-      font-family: var(--font-mono);
-      color: var(--subtle);
-    }
-
-    @media (max-width: 520px) {
-      body {
-        padding: 48px 18px 64px;
-      }
-      .title-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-      .item-header {
-        flex-direction: column;
-        gap: 2px;
-      }
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main>
-    <header>
-      <div class="title-row">
-        <h1>Lakshay Papneja</h1>
-        <div class="status">
-          <span class="status-dot"></span>
-          <span>Online</span>
-        </div>
+
+  <!-- 3D WebGL Canvas -->
+  <canvas id="c"></canvas>
+
+  <!-- Top Bar -->
+  <header class="topbar">
+    <a href="#" class="logo-btn" onclick="closeBox(); window.flyToPrev && window.flyToPrev(); return false;" aria-label="Lakshay Papneja Home">
+      <div class="monogram">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M4 4v16h16"/>
+          <path d="M4 14h10a4 4 0 0 0 0-8H4"/>
+        </svg>
       </div>
-      <p class="intro">
-        Systems engineer building autonomous data infrastructure, web automation engines, and agent-native protocols.
+    </a>
+
+    <div class="col col-place col-go" onclick="openBox('about')">
+      <span class="k">Location</span>
+      <span class="v">New Delhi, IN &nbsp;•&nbsp; <time id="live-time">--:--:-- IST</time></span>
+    </div>
+
+    <div class="col col-place">
+      <span class="k">Discipline</span>
+      <span class="v">Systems & Data Infrastructure</span>
+    </div>
+
+    <div class="col">
+      <span class="k">Status</span>
+      <span class="v"><span class="status-dot"></span> Available</span>
+    </div>
+
+    <nav class="nav-links">
+      <button type="button" class="nav-item" onclick="openBox('systems')">Systems</button>
+      <button type="button" class="nav-item" onclick="openBox('about')">About</button>
+      <button type="button" class="nav-item nav-btn-highlight" onclick="openBox('contact')">Start a project</button>
+    </nav>
+  </header>
+
+  <!-- Bottom Hero -->
+  <div class="hero" id="hero">
+    <div class="hero-row">
+      <p class="lead">
+        Systems engineer building autonomous data infrastructure, real-time web intelligence engines, and agent-native protocols.
       </p>
-    </header>
 
-    <section>
-      <h2>Systems</h2>
-      <div class="list">
-        <a class="item" href="https://scrapers.tech" target="_blank" rel="noopener noreferrer">
-          <div class="item-header">
-            <span class="item-title">Scrapers.tech</span>
-            <span class="item-meta">Live</span>
-          </div>
-          <p class="item-desc">
-            Production intelligence hub and catalog of 24 autonomous actors powering high-volume web extraction and analysis.
-          </p>
-        </a>
+      <button type="button" class="start-btn" onclick="window.flyToStart && window.flyToStart();">
+        <span>Fly through systems</span>
+        <i>
+          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M8 3v10M3 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </i>
+      </button>
+    </div>
 
-        <a class="item" href="https://apify.com/laborious_rumor" target="_blank" rel="noopener noreferrer">
-          <div class="item-header">
-            <span class="item-title">Apify Actors</span>
-            <span class="item-meta">24 Public</span>
-          </div>
-          <p class="item-desc">
-            Containerized cloud workers monetized under Pay-Per-Event. Social sentiment miners, commerce trackers, and competitive decoders.
-          </p>
-        </a>
+    <h1 class="bigname">Lakshay Papneja</h1>
+  </div>
 
-        <div class="item">
-          <div class="item-header">
-            <span class="item-title">Model Context Protocol</span>
-            <span class="item-meta">Protocol</span>
-          </div>
-          <p class="item-desc">
-            Native MCP servers linking frontier LLMs and reasoning agents directly to live web data streams and headless browser pools.
-          </p>
-        </div>
+  <!-- Flight HUD Footer -->
+  <div class="flybar" id="flybar">
+    <div class="now-reading">
+      <div class="now-num" id="now-num">01</div>
+      <div class="now-txt">
+        <div class="now-title" id="now-title" onclick="openActiveSystemDetail()">Scrapers.tech</div>
+        <div class="now-sub" id="now-sub">Production Intelligence Hub • 24 Actors Live</div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <h2>Principles</h2>
-      <div class="notes">
-        <div class="note">
-          <strong>Simple systems fail simply.</strong> Avoid speculative abstractions. Make failure modes explicit and inspectable.
-        </div>
-        <div class="note">
-          <strong>Speed is UX, DX, and AX.</strong> Latency degrades human focus and exhausts agent context budgets. Optimize cold starts.
-        </div>
-        <div class="note">
-          <strong>Self-explaining layouts.</strong> If an interface needs helper labels to make sense, fix the hierarchy instead of adding prose.
-        </div>
-      </div>
-    </section>
+    <div class="fly-controls">
+      <button type="button" class="ctrl-btn" onclick="window.flyToPrev && window.flyToPrev();" aria-label="Fly backwards">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M10 3 5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" class="ctrl-btn" onclick="window.flyToNext && window.flyToNext();" aria-label="Fly forward">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <button type="button" class="ctrl-btn" onclick="openBox('systems');" aria-label="View all systems list">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M3 4h10M3 8h10M3 12h10" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </div>
+  </div>
 
-    <section>
-      <h2>Reach</h2>
-      <div class="links">
-        <a href="https://github.com/ylc27lakshaypapneja-hue" target="_blank" rel="noopener noreferrer">github</a>
-        <a href="https://scrapers.tech" target="_blank" rel="noopener noreferrer">scrapers.tech</a>
-        <a href="https://apify.com/laborious_rumor" target="_blank" rel="noopener noreferrer">apify</a>
-        <a href="mailto:thefinancialnerds@gmail.com">email</a>
-      </div>
-    </section>
+  <!-- Slide-out Panel (.box) -->
+  <aside class="box" id="box" aria-label="Details Drawer">
+    <div class="v-head">
+      <button type="button" class="back-link" onclick="closeBox()">
+        <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M10 3 5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>Close</span>
+      </button>
+      <span class="view-indicator" id="view-indicator">Systems</span>
+    </div>
 
-    <footer>
-      <span>lakshaypapneja.me</span>
-      <span>2026</span>
-    </footer>
-  </main>
+    <div class="p-scroll">
+      <!-- 1. Systems List View -->
+      <section class="view active" id="view-systems">
+        <h2>Production <em>Systems</em></h2>
+        <p class="box-sub">
+          Autonomous data extraction infrastructure, live Apify actor fleets, and agent-native MCP servers built for scale and sub-second latency.
+        </p>
+
+        <div class="systems-grid">
+          <article class="sys-card" onclick="openSystemDetail(0)">
+            <div class="sys-header">
+              <span class="sys-title">Scrapers.tech</span>
+              <span class="sys-badge">LIVE • HUB</span>
+            </div>
+            <p class="sys-desc">Central catalog and execution engine coordinating 24 production scrapers for AI agents and enterprise operators.</p>
+            <div class="sys-footer">
+              <span class="tag">Distributed Mesh</span>
+              <span class="tag">AI MCP Bridge</span>
+              <span class="tag">Node 24</span>
+            </div>
+          </article>
+
+          <article class="sys-card" onclick="openSystemDetail(1)">
+            <div class="sys-header">
+              <span class="sys-title">Apify Cloud Actor Fleet</span>
+              <span class="sys-badge">24 ACTORS</span>
+            </div>
+            <p class="sys-desc">Containerized serverless scrapers monetized under Pay-Per-Event. All 24 actors maintain 10/10 quality scores.</p>
+            <div class="sys-footer">
+              <span class="tag">Apify SDK</span>
+              <span class="tag">10/10 Quality</span>
+              <span class="tag">Pay-Per-Event</span>
+            </div>
+          </article>
+
+          <article class="sys-card" onclick="openSystemDetail(2)">
+            <div class="sys-header">
+              <span class="sys-title">Model Context Protocol</span>
+              <span class="sys-badge">PROTOCOL</span>
+            </div>
+            <p class="sys-desc">Native MCP server interface bridging frontier reasoning models (Gemini, Claude, GPT) to live web intelligence.</p>
+            <div class="sys-footer">
+              <span class="tag">MCP JSON-RPC</span>
+              <span class="tag">Agent Tooling</span>
+              <span class="tag">Streaming</span>
+            </div>
+          </article>
+
+          <article class="sys-card" onclick="openSystemDetail(3)">
+            <div class="sys-header">
+              <span class="sys-title">Headless Scraper Mesh</span>
+              <span class="sys-badge">RUNTIME</span>
+            </div>
+            <p class="sys-desc">Stealth browser cluster with dynamic canvas fingerprint emulation, TLS spoofing, and resilient IP rotation.</p>
+            <div class="sys-footer">
+              <span class="tag">Puppeteer</span>
+              <span class="tag">Playwright</span>
+              <span class="tag">Stealth EV</span>
+            </div>
+          </article>
+
+          <article class="sys-card" onclick="openSystemDetail(4)">
+            <div class="sys-header">
+              <span class="sys-title">Review Aspect & Sentiment Miner</span>
+              <span class="sys-badge">NLP ENGINE</span>
+            </div>
+            <p class="sys-desc">Extracts multi-language customer sentiment, product flaw vectors, and competitor sentiment shifts at scale.</p>
+            <div class="sys-footer">
+              <span class="tag">NLP Aspect Mining</span>
+              <span class="tag">Sentiment Vectors</span>
+            </div>
+          </article>
+
+          <article class="sys-card" onclick="openSystemDetail(5)">
+            <div class="sys-header">
+              <span class="sys-title">Ecommerce Multi-Store Tracker</span>
+              <span class="sys-badge">COMMERCE</span>
+            </div>
+            <p class="sys-desc">Sub-second delta pricing and stock availability tracker across Amazon, Shopify, Depop, and major marketplaces.</p>
+            <div class="sys-footer">
+              <span class="tag">Sub-Second Delta</span>
+              <span class="tag">Stock Monitoring</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 2. System Detail View -->
+      <section class="view" id="view-detail">
+        <button type="button" class="back-link" style="align-self: flex-start;" onclick="switchView('systems')">
+          ← Back to systems
+        </button>
+
+        <h2 id="detail-title">System <em>Title</em></h2>
+        <p class="box-sub" id="detail-desc">Detailed system description goes here.</p>
+
+        <div class="detail-banner">
+          <div class="detail-stats">
+            <div class="stat-item">
+              <span class="stat-num" id="stat-1-val">24</span>
+              <span class="stat-label" id="stat-1-lbl">Live Actors</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" id="stat-2-val">10/10</span>
+              <span class="stat-label" id="stat-2-lbl">Quality Score</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num" id="stat-3-val">99.9%</span>
+              <span class="stat-label" id="stat-3-lbl">Execution Uptime</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="action-row">
+          <a href="#" class="primary-btn" id="detail-primary-btn" target="_blank" rel="noopener">
+            <span>Explore Live System</span> →
+          </a>
+          <button type="button" class="secondary-btn" onclick="openBox('contact')">
+            Discuss Architecture
+          </button>
+        </div>
+      </section>
+
+      <!-- 3. About View -->
+      <section class="view" id="view-about">
+        <h2>About & <em>Philosophy</em></h2>
+        <p class="box-sub">
+          I design and scale autonomous data systems that turn raw, unstructured web noise into clean, deterministic intelligence for human engineers and autonomous agents alike.
+        </p>
+
+        <div class="facts-grid">
+          <div class="fact-card">
+            <span class="fact-title">Philosophy</span>
+            <p class="fact-val"><strong>Simple systems fail simply.</strong> No speculative abstractions. Deterministic pipelines with explicit failure boundaries.</p>
+          </div>
+          <div class="fact-card">
+            <span class="fact-title">UX, DX & AX</span>
+            <p class="fact-val">Speed is user experience, developer experience, and agent experience simultaneously. Sub-10ms latency matters.</p>
+          </div>
+          <div class="fact-card">
+            <span class="fact-title">Core Stack</span>
+            <p class="fact-val">Node.js, Three.js, Python, Model Context Protocol (MCP), Puppeteer/Playwright, Docker, Redis, Apify Cloud.</p>
+          </div>
+          <div class="fact-card">
+            <span class="fact-title">Track Record</span>
+            <p class="fact-val">24 production cloud actors published and monetized on Apify Store with 10/10 verified quality scores.</p>
+          </div>
+        </div>
+
+        <div class="action-row" style="margin-top: 14px;">
+          <a href="https://github.com/ylc27lakshaypapneja-hue" target="_blank" rel="noopener" class="secondary-btn">GitHub</a>
+          <a href="https://scrapers.tech" target="_blank" rel="noopener" class="secondary-btn">Scrapers.tech</a>
+          <a href="https://apify.com/laborious_rumor" target="_blank" rel="noopener" class="secondary-btn">Apify Profile</a>
+          <a href="mailto:thefinancialnerds@gmail.com" class="primary-btn">Email Me</a>
+        </div>
+      </section>
+
+      <!-- 4. Contact / Start a Project View -->
+      <section class="view" id="view-contact">
+        <h2>Start a <em>Project</em></h2>
+        <p class="box-sub">
+          Tell me what you're building. Whether you need a resilient data harvesting mesh, custom MCP server, or end-to-end scraper pipeline.
+        </p>
+
+        <form class="cform" id="contact-form" onsubmit="handleFormSubmit(event)">
+          <div class="field">
+            <label for="c-name">Your Name</label>
+            <input type="text" id="c-name" required placeholder="Name or Team">
+          </div>
+
+          <div class="field">
+            <label for="c-email">Email Address</label>
+            <input type="email" id="c-email" required placeholder="you@company.com">
+          </div>
+
+          <div class="field">
+            <span>What do you need?</span>
+            <div class="chips">
+              <label class="chip"><input type="checkbox" name="need" value="Data Infrastructure"><span>Data Infrastructure</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="Custom Scraper" checked><span>Custom Scrapers</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="MCP Server"><span>MCP Server</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="AI Agent Tooling"><span>AI Agent Tooling</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="Consulting"><span>Architecture</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <span>Estimated Scope / Budget</span>
+            <div class="chips">
+              <label class="chip"><input type="radio" name="budget" value="Under $5k"><span>Under $5k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="$5k - $15k" checked><span>$5k – $15k</span></label>
+              <label class="chip"><input type="radio" name="budget" value="$15k+"><span>$15k+</span></label>
+              <label class="chip"><input type="radio" name="budget" value="Advisory"><span>Advisory</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="c-msg">About the Project</label>
+            <textarea id="c-msg" rows="3" required placeholder="What platforms are you scraping or what agent system are you building?"></textarea>
+          </div>
+
+          <div class="c-foot">
+            <button type="submit" class="primary-btn">Send Brief</button>
+            <p class="c-note">Or email directly to <a href="mailto:thefinancialnerds@gmail.com">thefinancialnerds@gmail.com</a></p>
+          </div>
+        </form>
+      </section>
+    </div>
+  </aside>
+
+  <!-- Interactive HUD Tooltip -->
+  <div class="hud" id="hud">
+    <span class="status-dot"></span>
+    <span id="hud-text">Scrapers.tech • Click to inspect</span>
+  </div>
+
+  <!-- Loader with SVG stroke drawing -->
+  <div class="loader" id="loader">
+    <svg class="ld-mark" viewBox="0 0 100 100" fill="none">
+      <path class="ld-path" d="M20 20 L20 80 L80 80" stroke="#f2f2f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      <path class="ld-path" d="M20 50 L60 50 A 15 15 0 0 0 60 20 L20 20" stroke="#f2f2f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <span class="ld-label">Initializing Cosmos</span>
+  </div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <!-- Cosmos 3D script -->
+  <script src="cosmos.js"></script>
+
+  <!-- Main interactive UI logic -->
+  <script>
+    // Live Indian Standard Time (IST) Clock
+    function updateLiveTime() {
+      const el = document.getElementById("live-time");
+      if (!el) return;
+      const now = new Date();
+      const options = { timeZone: "Asia/Kolkata", hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" };
+      el.textContent = now.toLocaleTimeString("en-GB", options) + " IST";
+    }
+    setInterval(updateLiveTime, 1000);
+    updateLiveTime();
+
+    // Box views manager
+    const box = document.getElementById("box");
+    const viewIndicator = document.getElementById("view-indicator");
+    const views = {
+      systems: document.getElementById("view-systems"),
+      detail: document.getElementById("view-detail"),
+      about: document.getElementById("view-about"),
+      contact: document.getElementById("view-contact")
+    };
+
+    window.openBox = function(viewName) {
+      document.body.classList.add("boxed");
+      box.classList.add("open");
+      switchView(viewName || "systems");
+    };
+
+    window.closeBox = function() {
+      box.classList.remove("open");
+      document.body.classList.remove("boxed");
+    };
+
+    window.switchView = function(viewName) {
+      Object.keys(views).forEach(key => {
+        if (views[key]) views[key].classList.remove("active");
+      });
+      if (views[viewName]) {
+        views[viewName].classList.add("active");
+        viewIndicator.textContent = viewName.toUpperCase();
+      }
+    };
+
+    // Deep-dive detail data
+    const detailData = [
+      {
+        title: "Scrapers.tech",
+        desc: "Central production hub and real-time execution engine coordinating 24 autonomous scrapers. Exposes streaming endpoints and standardized schema for autonomous agents and enterprise data workflows.",
+        stat1Val: "24", stat1Lbl: "Live Actors",
+        stat2Val: "Sub-Sec", stat2Lbl: "API Response",
+        stat3Val: "99.9%", stat3Lbl: "System Uptime",
+        link: "https://scrapers.tech",
+        btnText: "Open Scrapers.tech"
+      },
+      {
+        title: "Apify Cloud Actor Fleet",
+        desc: "Fleet of 24 serverless, containerized cloud scrapers monetized under Pay-Per-Event on the official Apify Store under handle @laborious_rumor. Every actor holds a 10/10 quality score with automated error self-healing.",
+        stat1Val: "24", stat1Lbl: "Published Actors",
+        stat2Val: "10/10", stat2Lbl: "Quality Score",
+        stat3Val: "PPE", stat3Lbl: "Monetization",
+        link: "https://apify.com/laborious_rumor",
+        btnText: "View Apify Profile"
+      },
+      {
+        title: "Model Context Protocol (MCP)",
+        desc: "Native MCP tooling and JSON-RPC servers allowing frontier LLMs (Gemini, Claude, GPT) to autonomously call web crawlers, search structured intelligence, and bypass CAPTCHAs in real-time execution loops.",
+        stat1Val: "Native", stat1Lbl: "MCP Protocol",
+        stat2Val: "JSON-RPC", stat2Lbl: "Standard",
+        stat3Val: "Zero-Lag", stat3Lbl: "Streaming",
+        link: "https://github.com/ylc27lakshaypapneja-hue",
+        btnText: "View GitHub Repos"
+      },
+      {
+        title: "Headless Scraper Mesh",
+        desc: "Anti-bot evasion cluster utilizing Playwright and Puppeteer with TLS fingerprint emulation, WebGL canvas spoofing, and automatic residential IP pooling capable of surviving stringent cloudflare and datadome challenges.",
+        stat1Val: "100%", stat1Lbl: "Fingerprint Spoof",
+        stat2Val: "Multi-Cloud", stat2Lbl: "Topology",
+        stat3Val: "Stealth", stat3Lbl: "Detection Mode",
+        link: "https://scrapers.tech",
+        btnText: "Explore Mesh"
+      },
+      {
+        title: "Review Aspect & Sentiment Miner",
+        desc: "Multi-language NLP engine that deconstructs millions of user reviews, Reddit threads, and forum debates into granular sentiment vectors, defect alerts, and competitor feature rankings.",
+        stat1Val: "Aspect", stat1Lbl: "NLP Mining",
+        stat2Val: "50+ Langs", stat2Lbl: "Coverage",
+        stat3Val: "Real-Time", stat3Lbl: "Delta Feed",
+        link: "https://apify.com/laborious_rumor",
+        btnText: "Test Miner on Apify"
+      },
+      {
+        title: "Ecommerce Multi-Store Tracker",
+        desc: "High-precision pricing and stock availability tracker observing Amazon, Depop, Shopify, and niche marketplaces to trigger automated arbitrage and inventory replenishment signals.",
+        stat1Val: "Sub-Second", stat1Lbl: "Price Change Alert",
+        stat2Val: "Multi-Store", stat2Lbl: "Platform Support",
+        stat3Val: "Automated", stat3Lbl: "Arbitrage Feed",
+        link: "https://apify.com/laborious_rumor",
+        btnText: "View Tracker"
+      }
+    ];
+
+    let currentSystemIndex = 0;
+    window.openSystemDetail = function(idx) {
+      currentSystemIndex = idx;
+      const data = detailData[idx] || detailData[0];
+      document.getElementById("detail-title").innerHTML = data.title.replace(" ", " <em>") + "</em>";
+      document.getElementById("detail-desc").textContent = data.desc;
+      document.getElementById("stat-1-val").textContent = data.stat1Val;
+      document.getElementById("stat-1-lbl").textContent = data.stat1Lbl;
+      document.getElementById("stat-2-val").textContent = data.stat2Val;
+      document.getElementById("stat-2-lbl").textContent = data.stat2Lbl;
+      document.getElementById("stat-3-val").textContent = data.stat3Val;
+      document.getElementById("stat-3-lbl").textContent = data.stat3Lbl;
+
+      const pBtn = document.getElementById("detail-primary-btn");
+      pBtn.href = data.link;
+      pBtn.innerHTML = `<span>${data.btnText}</span> →`;
+
+      openBox("detail");
+    };
+
+    window.openActiveSystemDetail = function() {
+      openSystemDetail(currentSystemIndex);
+    };
+
+    // Form submit handler
+    window.handleFormSubmit = function(e) {
+      e.preventDefault();
+      const name = document.getElementById("c-name").value;
+      const email = document.getElementById("c-email").value;
+      const msg = document.getElementById("c-msg").value;
+      const needs = Array.from(document.querySelectorAll("input[name='need']:checked")).map(el => el.value).join(", ");
+      const budget = (document.querySelector("input[name='budget']:checked") || {}).value || "Not specified";
+
+      const subject = encodeURIComponent(`Project Brief from ${name} [${budget}]`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nNeeds: ${needs}\nBudget: ${budget}\n\nProject Details:\n${msg}`);
+
+      window.location.href = `mailto:thefinancialnerds@gmail.com?subject=${subject}&body=${body}`;
+    };
+
+    // Loader removal after initial entrance
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        const loader = document.getElementById("loader");
+        if (loader) loader.classList.add("done");
+      }, 900);
+    });
+  </script>
 </body>
 </html>

@@ -54,6 +54,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter+Tight:wght@400;500;600&display=swap">
 
+  <!-- Microsoft Clarity Analytics (Heatmaps & Session Recordings) -->
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+      try {
+        var urlParams = new URLSearchParams(window.location.search);
+        var paramId = urlParams.get("clarity_id");
+        if (paramId) localStorage.setItem("LP_CLARITY_ID", paramId);
+        var projectId = window.CLARITY_PROJECT_ID || localStorage.getItem("LP_CLARITY_ID") || "CLARITY_PROJECT_ID";
+        if (!projectId || projectId === "CLARITY_PROJECT_ID") return;
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+projectId;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      } catch (e) {}
+    })(window, document, "clarity", "script");
+  </script>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -120,7 +136,7 @@
           </i>
         </button>
         <button type="button" class="dossier-btn" onclick="openBox('resume')">
-          <span>Dossier</span> →
+          <span>Full Resume</span> →
         </button>
       </div>
     </div>
@@ -130,7 +146,7 @@
 
   <!-- Flight HUD Footer -->
   <div class="flybar" id="flybar">
-    <div class="now-reading" onclick="openActiveSystemDetail()" title="Click to inspect milestone dossier">
+    <div class="now-reading" onclick="openActiveSystemDetail()" title="Click to view milestone details">
       <div class="fly-progress">
         <div class="fly-progress-fill" id="fly-progress-fill"></div>
       </div>
@@ -152,7 +168,7 @@
           <path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button type="button" class="ctrl-btn" onclick="openBox('resume');" aria-label="Open full resume" title="Full Resume Dossier">
+      <button type="button" class="ctrl-btn" onclick="openBox('resume');" aria-label="Open full resume" title="View Full Resume">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M3 4h10M3 8h10M3 12h10" stroke-linecap="round"/>
         </svg>
@@ -163,10 +179,10 @@
   <!-- End-of-Scroll Finale Overlay ("The End Song") -->
   <div class="outro-overlay" id="outro-overlay" aria-live="polite">
     <div class="outro-card">
-      <div class="outro-badge">
-        <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span>Outro  •  Track 08 of 08</span>
-      </div>
+      <button type="button" class="outro-badge" id="outro-audio-btn" onclick="window.toggleEndSong && window.toggleEndSong()" title="Play or mute the End Song & Voice">
+        <span class="eq-bars" id="outro-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span id="outro-badge-txt">🔊 Tap to Play End Song &amp; Voice</span>
+      </button>
 
       <h2 class="outro-title">That was the <em>end song.</em></h2>
 
@@ -179,7 +195,7 @@
           <span>Let's Connect</span> →
         </button>
         <button type="button" class="secondary-btn" onclick="openBox('resume')">
-          Full Resume Dossier
+          View Full Resume
         </button>
         <button type="button" class="secondary-btn" onclick="window.flyToTop && window.flyToTop()">
           ↺ Replay from Top
@@ -189,7 +205,7 @@
   </div>
 
   <!-- Slide-Out Interactive Portfolio Drawer (.box) -->
-  <aside class="box" id="box" aria-label="Interactive Portfolio Dossier">
+  <aside class="box" id="box" aria-label="Interactive Portfolio & Resume">
     <div class="v-head">
       <button type="button" class="back-link" onclick="closeBox()">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -927,7 +943,142 @@
       window.location.href = `mailto:ylc27lakshay.papneja@mastersunion.org?subject=${subject}&body=${body}`;
     };
 
+    // ---------- End Song Ambient Synth + Voice Engine ----------
+    let audioCtx = null;
+    let endSongPlaying = false;
+    let endSongTimer = null;
+    let activeOscillators = [];
+
+    function unlockAudio() {
+      if (!audioCtx) {
+        const AC = window.AudioContext || window.webkitAudioContext;
+        if (AC) audioCtx = new AC();
+      }
+      if (audioCtx && audioCtx.state === "suspended") {
+        audioCtx.resume().catch(() => {});
+      }
+    }
+
+    window.addEventListener("pointerdown", unlockAudio, { passive: true });
+    window.addEventListener("keydown", unlockAudio, { passive: true });
+
+    function playChordNote(freq, startTime, duration, vol) {
+      if (!audioCtx) return;
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      const filter = audioCtx.createBiquadFilter();
+
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(freq, startTime);
+
+      filter.type = "lowpass";
+      filter.frequency.setValueAtTime(1100, startTime);
+
+      gain.gain.setValueAtTime(0.0001, startTime);
+      gain.gain.exponentialRampToValueAtTime(vol, startTime + 0.18);
+      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
+
+      osc.connect(filter);
+      filter.connect(gain);
+      gain.connect(audioCtx.destination);
+
+      osc.start(startTime);
+      osc.stop(startTime + duration + 0.05);
+      activeOscillators.push(osc);
+    }
+
+    window.stopEndSong = function() {
+      endSongPlaying = false;
+      if (endSongTimer) {
+        clearTimeout(endSongTimer);
+        endSongTimer = null;
+      }
+      activeOscillators.forEach(o => {
+        try { o.stop(); } catch (e) {}
+      });
+      activeOscillators = [];
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.cancel();
+      }
+      const badgeTxt = document.getElementById("outro-badge-txt");
+      if (badgeTxt) badgeTxt.textContent = "🔊 Tap to Play End Song & Voice";
+    };
+
+    window.playEndSong = function(isAuto) {
+      unlockAudio();
+      if (endSongPlaying) return;
+
+      const badgeTxt = document.getElementById("outro-badge-txt");
+
+      // Play warm ambient outro chords (Fmaj7 -> Em7 -> Dm7 -> Cmaj7)
+      if (audioCtx && audioCtx.state === "running") {
+        endSongPlaying = true;
+        if (badgeTxt) badgeTxt.textContent = "🔊 Playing End Song • Tap to Mute";
+
+        const now = audioCtx.currentTime + 0.05;
+        const progression = [
+          [174.61, 220.00, 261.63, 329.63, 392.00], // Fmaj9
+          [164.81, 196.00, 246.94, 293.66, 392.00], // Em7
+          [146.83, 174.61, 220.00, 261.63, 329.63], // Dm9
+          [130.81, 164.81, 196.00, 246.94, 293.66]  // Cmaj9
+        ];
+
+        progression.forEach((chord, cIdx) => {
+          const chordStart = now + cIdx * 2.2;
+          chord.forEach((freq, nIdx) => {
+            playChordNote(freq, chordStart + nIdx * 0.14, 2.4, 0.045);
+          });
+        });
+
+        endSongTimer = setTimeout(() => {
+          endSongPlaying = false;
+          if (badgeTxt) badgeTxt.textContent = "🔊 Replay End Song & Voice";
+        }, 9500);
+      }
+
+      // Speak the voiceover outro line
+      if ("speechSynthesis" in window) {
+        try {
+          window.speechSynthesis.cancel();
+          const utter = new SpeechSynthesisUtterance(
+            "And that was the end song. Eight milestones down — from New York venture capital to Dubai hedge funds and Masters' Union. The scroll is over. Now, let's write the next verse together."
+          );
+          utter.rate = 0.96;
+          utter.pitch = 0.95;
+          utter.volume = 0.95;
+
+          const voices = window.speechSynthesis.getVoices();
+          const preferred = voices.find(v =>
+            /Daniel|Alex|Aaron|Samantha|Google UK English Male|Google US English/i.test(v.name)
+          );
+          if (preferred) utter.voice = preferred;
+
+          utter.onstart = () => {
+            endSongPlaying = true;
+            if (badgeTxt) badgeTxt.textContent = "🔊 Playing End Song • Tap to Mute";
+          };
+          utter.onend = () => {
+            if (!endSongPlaying && badgeTxt) {
+              badgeTxt.textContent = "🔊 Replay End Song & Voice";
+            }
+          };
+          window.speechSynthesis.speak(utter);
+        } catch (e) {}
+      }
+    };
+
+    window.toggleEndSong = function() {
+      if (endSongPlaying || ("speechSynthesis" in window && window.speechSynthesis.speaking)) {
+        window.stopEndSong();
+      } else {
+        window.playEndSong(false);
+      }
+    };
+
     window.addEventListener("load", () => {
+      if ("speechSynthesis" in window) {
+        window.speechSynthesis.getVoices();
+      }
       setTimeout(() => {
         const loader = document.getElementById("loader");
         if (loader) loader.classList.add("done");

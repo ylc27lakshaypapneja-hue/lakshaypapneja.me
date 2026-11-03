@@ -203,7 +203,7 @@
     // Action hint
     ctx.fillStyle = "rgba(243, 244, 246, 0.5)";
     ctx.font = "20px -apple-system, BlinkMacSystemFont, sans-serif";
-    ctx.fillText("Open dossier →", 525, 367);
+    ctx.fillText("View details →", 530, 367);
 
     const texture = new THREE.CanvasTexture(c);
     texture.minFilter = THREE.LinearFilter;
@@ -330,10 +330,17 @@
     }
 
     // Check if user has scrolled past the 8th milestone into the End Song / Finale
+    const wasAtEnd = document.body.classList.contains("at-end");
     if (targetCamZ <= -1500) {
       document.body.classList.add("at-end");
+      if (!wasAtEnd && window.playEndSong) {
+        window.playEndSong(true);
+      }
     } else {
       document.body.classList.remove("at-end");
+      if (wasAtEnd && window.stopEndSong) {
+        window.stopEndSong();
+      }
     }
   }
 

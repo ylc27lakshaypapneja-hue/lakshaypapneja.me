@@ -1,15 +1,58 @@
 # Lakshay Papneja
 
-> Systems engineer building autonomous data infrastructure, web automation engines, and agent-native protocols.
+> PGP Candidate in Technology & Business Management at Masters' Union (Investment Fund 13/330+, Top 5% Merit Scholar). Experience across Venture Capital (ThirdBase Capital NYC), CEO's Office Strategy (Aviva India), Hedge Fund Research (2Cents Capital Dubai, $25M AUM), and Zero-to-One Ventures (Pegster, Scrapers.tech).
 
-## Canonical Links
+## Contact & Links
 - Website: https://lakshaypapneja.me
+- Email: ylc27lakshay.papneja@mastersunion.org
+- Location: Gurugram, India
 - Scrapers Hub: https://scrapers.tech
 - GitHub: https://github.com/ylc27lakshaypapneja-hue
-- Apify Store Profile: https://apify.com/laborious_rumor
-- Email: thefinancialnerds@gmail.com
+- Apify Store: https://apify.com/laborious_rumor
 
-## Selected Systems
-- Scrapers.tech: Production catalog of 24 autonomous cloud scrapers and MCP endpoints.
-- Apify Actors: 24 monetized public actors under Pay-Per-Event pricing.
-- Model Context Protocol: Native MCP tooling connecting frontier LLM reasoning agents to live web intelligence.
+## Education
+- **Masters' Union (Gurugram)** | 2025 – Present
+  - Pursuing PGP in Technology & Business Management
+  - Member of Masters' Union Investment Fund (13 / 330+ students)
+  - Awarded Merit-Based Scholarship (25% of tuition fee, awarded to top 5% among 330 students)
+- **Guru Nanak Khalsa College, Kurukshetra University (Yamunanagar)** | 2022 – 2025
+  - B.Com | Received ₹1.5 Lakh scholarship from Reliance Foundation | Core Member of Finance Club
+  - Delivered session on stock markets to 200+ students at IIIT Una | Cleared CA Foundation in first attempt
+- **Mukand Lal Public School (Yamunanagar)** | 2020 – 2022
+  - CBSE Class 12: 86.5% | Student Head of Annual Inter-School Debate & Declamation (30+ Schools)
+  - CBSE Class 10: 85.4% | Won 20+ Intra & Inter-School Debates & Declamations
+
+## Experience & Internships
+- **Aviva India (Gurugram)** — CEO's Office Intern | Jun '26 – Aug '26
+  - Initiated 15+ B2B partnerships across insurtech, healthtech, fintech & diagnostics
+  - Led 1 deal end-to-end with Fitelo (₹100 Crore+ revenue); 3 more in pipeline at close
+  - Mapped customer journey, tightened FLS follow-ups & doubled conversion from 1% to 2%
+- **ThirdBase Capital (NYC, Remote)** — Venture Capital Intern | Feb '26 – Present
+  - Sourced an LP who committed $500K as an investor and strategic advisor to the fund
+  - Built database of 3,000+ VP & Head-level engineers to strengthen deal sourcing and portfolio support
+  - Built a 50+ senior technologist community across the US, contributing to 2 co-investments and SPVs
+- **2Cents Capital (Dubai, Remote)** — Research Analyst Intern (PPO) | Jun '24 – Dec '24
+  - Dubai-based hedge fund with $25M AUM; joined as one of the first interns during 0-to-1 growth phase
+  - Onboarded 3+ custodians and 5+ brokers across India, Dubai, and GIFT City
+  - Generated 40+ alpha in derivatives by leveraging research papers for asset-level decisions
+  - Accelerated GTM execution by reducing product launch timelines 30% with 100% regulatory adherence
+- **Papneja Associates (Yamunanagar)** — Tax Consultant Apprentice | May '20 – May '24
+  - Handled 2,000+ tax filings and 50+ litigation cases (99% accuracy, 90%+ favourable outcome)
+  - Automated legacy systems to cut processing time by 30%, saving 200+ hours annually
+  - Designed SIP/SWP investment structures for client portfolios exceeding ₹5 Crore in aggregate value
+  - Delivered tax advisory to 100+ SMEs and generated ₹1 Crore+ cumulative tax savings for clients
+
+## Ventures & Projects
+- **Pegster (Dropshipping Venture)** | 2025
+  - Built a dropshipping business in 2 months, achieving ₹4,00,000+ in sales in the "Drinking Games" niche
+  - Generated ₹36,000 in sales during the Dropshipping Mela event alone
+- **Content Creation (YouTube & Short-Form)** | 2020 – 2026
+  - Scaled finance and personal growth YouTube channel to 2,000+ subscribers
+  - Drove 500,000+ cumulative views through Reels and Shorts sharing business breakdowns and case studies
+- **Scrapers.tech & Apify Automation Fleet** | 2026
+  - Built Scrapers.tech and published 24 public monetized cloud actors on Apify Store
+
+## Achievements
+- **Josh Talks & Podcasts (10M+ Subscribers)** | 2023: Invited speaker on equity markets & investing psychology; garnered 2M+ views and 5M+ impressions across platforms
+- **Reliance Foundation Undergraduate Scholar** | 2023: Awarded ₹1.5 Lakh scholarship among top 5,000 of 50,000+ applicants nationwide
+- **State-Level Badminton (Government of Haryana)** | 2020: Secured 3rd place at District Level (U-17), represented city at State Level, ranked top 10 of 30 cities

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Lakshay Papneja — Systems Engineer & Data Architect</title>
-  <meta name="description" content="Systems engineer building autonomous data infrastructure, real-time web intelligence engines, and native Model Context Protocol ecosystems.">
+  <title>Lakshay Papneja — Venture Capital, Strategy & Systems</title>
+  <meta name="description" content="Lakshay Papneja — PGP at Masters' Union (Top 5% Merit Scholar, Investment Fund). Experience across ThirdBase Capital (NYC VC), Aviva India (CEO's Office), and 2Cents Capital ($25M Dubai Hedge Fund).">
   <meta name="author" content="Lakshay Papneja">
   <meta name="theme-color" content="#0a0a0b">
   <link rel="canonical" href="https://lakshaypapneja.me/">
@@ -12,11 +12,11 @@
   <!-- OpenGraph & Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lakshaypapneja.me/">
-  <meta property="og:title" content="Lakshay Papneja — Systems Engineer">
-  <meta property="og:description" content="Systems engineer building autonomous data infrastructure, 24 public monetized actors, and native MCP tooling. Scroll to fly through the systems.">
+  <meta property="og:title" content="Lakshay Papneja — Venture Capital, Strategy & Systems">
+  <meta property="og:description" content="Masters' Union Investment Fund (13/330+) • ThirdBase Capital NYC ($500K LP Sourced) • Aviva CEO's Office (15+ B2B Deals) • 2Cents Capital ($25M Hedge Fund PPO) • Josh Talks Speaker (2M+ Views).">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lakshay Papneja — Systems Engineer">
-  <meta name="twitter:description" content="Autonomous data infrastructure, real-time web scrapers, and agent protocols.">
+  <meta name="twitter:title" content="Lakshay Papneja — Interactive Portfolio">
+  <meta name="twitter:description" content="Scroll to fly through experience in Venture Capital, CEO's Office Strategy, Hedge Fund Research, and Ventures.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0b'/><path d='M8 7h4v14h12v4H8z' fill='%23f2f2f2'/></svg>">
@@ -28,12 +28,19 @@
     "@type": "Person",
     "name": "Lakshay Papneja",
     "url": "https://lakshaypapneja.me",
-    "jobTitle": "Systems Engineer & Data Architect",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Scrapers.tech",
-      "url": "https://scrapers.tech"
-    },
+    "email": "ylc27lakshay.papneja@mastersunion.org",
+    "jobTitle": "Venture Capital, Strategy & Systems Builder",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Masters' Union",
+        "location": "Gurugram, India"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Kurukshetra University (Guru Nanak Khalsa College)"
+      }
+    ],
     "sameAs": [
       "https://github.com/ylc27lakshaypapneja-hue",
       "https://apify.com/laborious_rumor",
@@ -57,51 +64,75 @@
   <!-- Top Bar -->
   <header class="topbar">
     <a href="#" class="logo-btn" onclick="closeBox(); window.flyToPrev && window.flyToPrev(); return false;" aria-label="Lakshay Papneja Home">
-      <div class="monogram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M4 4v16h16"/>
-          <path d="M4 14h10a4 4 0 0 0 0-8H4"/>
-        </svg>
-      </div>
+      <div class="monogram">LP</div>
     </a>
 
-    <div class="col col-place col-go" onclick="openBox('about')">
-      <span class="k">Location</span>
-      <span class="v">New Delhi, IN &nbsp;•&nbsp; <time id="live-time">--:--:-- IST</time></span>
+    <div class="col col-place col-go" onclick="openBox('education')">
+      <span class="k">Base & Education</span>
+      <span class="v">Masters' Union, Gurugram &nbsp;•&nbsp; <time id="live-time">--:--:-- IST</time></span>
     </div>
 
-    <div class="col col-place">
-      <span class="k">Discipline</span>
-      <span class="v">Systems & Data Infrastructure</span>
+    <div class="col col-place col-go" onclick="openBox('experience')">
+      <span class="k">Focus</span>
+      <span class="v">Venture Capital, CEO's Office & Growth</span>
     </div>
 
-    <div class="col">
+    <div class="col col-go" onclick="openBox('resume')">
       <span class="k">Status</span>
-      <span class="v"><span class="status-dot"></span> Available</span>
+      <span class="v"><span class="status-dot"></span> Open to Roles & Ventures</span>
     </div>
 
     <nav class="nav-links">
-      <button type="button" class="nav-item" onclick="openBox('systems')">Systems</button>
-      <button type="button" class="nav-item" onclick="openBox('about')">About</button>
-      <button type="button" class="nav-item nav-btn-highlight" onclick="openBox('contact')">Start a project</button>
+      <button type="button" class="nav-item" onclick="openBox('experience')">Experience</button>
+      <button type="button" class="nav-item" onclick="openBox('ventures')">Ventures</button>
+      <button type="button" class="nav-item" onclick="openBox('education')">Education & Honours</button>
+      <button type="button" class="nav-item" onclick="openBox('resume')">Full Resume</button>
+      <button type="button" class="nav-item nav-btn-highlight" onclick="openBox('contact')">Connect</button>
     </nav>
   </header>
 
   <!-- Bottom Hero -->
   <div class="hero" id="hero">
+    <!-- Interactive Impact Metric Pills (Click to fly & inspect) -->
+    <div class="impact-strip">
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(0); openSystemDetail(0);">
+        <strong>$500K LP</strong> Sourced at ThirdBase NYC
+      </button>
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(1); openSystemDetail(1);">
+        <strong>15+ B2B Deals</strong> Aviva CEO's Office
+      </button>
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(2); openSystemDetail(2);">
+        <strong>$25M Hedge Fund</strong> 2Cents Dubai (PPO)
+      </button>
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(3); openSystemDetail(3);">
+        <strong>Top 5% Scholar</strong> Masters' Union Fund (13/330+)
+      </button>
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(4); openSystemDetail(4);">
+        <strong>2M+ Views</strong> Josh Talks Speaker
+      </button>
+      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(5); openSystemDetail(5);">
+        <strong>₹4L+ in 2 Mo</strong> Pegster & Scrapers.tech
+      </button>
+    </div>
+
     <div class="hero-row">
       <p class="lead">
-        Systems engineer building autonomous data infrastructure, real-time web intelligence engines, and agent-native protocols.
+        PGP in Technology & Business Management at <strong>Masters' Union</strong> (Investment Fund 13/330+, Top 5% Merit Scholar). Operating across Venture Capital, CEO's Office Strategy, Hedge Fund Alpha, and High-Velocity Ventures.
       </p>
 
-      <button type="button" class="start-btn" onclick="window.flyToStart && window.flyToStart();">
-        <span>Fly through systems</span>
-        <i>
-          <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
-            <path d="M8 3v10M3 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </i>
-      </button>
+      <div class="hero-actions">
+        <button type="button" class="start-btn" onclick="window.flyToStart && window.flyToStart();">
+          <span>Fly through milestones</span>
+          <i>
+            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+              <path d="M8 3v10M3 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </i>
+        </button>
+        <button type="button" class="dossier-btn" onclick="openBox('resume')">
+          <span>Interactive Resume</span> →
+        </button>
+      </div>
     </div>
 
     <h1 class="bigname">Lakshay Papneja</h1>
@@ -112,23 +143,23 @@
     <div class="now-reading">
       <div class="now-num" id="now-num">01</div>
       <div class="now-txt">
-        <div class="now-title" id="now-title" onclick="openActiveSystemDetail()">Scrapers.tech</div>
-        <div class="now-sub" id="now-sub">Production Intelligence Hub • 24 Actors Live</div>
+        <div class="now-title" id="now-title" onclick="openActiveSystemDetail()">ThirdBase Capital</div>
+        <div class="now-sub" id="now-sub">NYC Venture Capital  •  $500K LP Sourced</div>
       </div>
     </div>
 
     <div class="fly-controls">
-      <button type="button" class="ctrl-btn" onclick="window.flyToPrev && window.flyToPrev();" aria-label="Fly backwards">
+      <button type="button" class="ctrl-btn" onclick="window.flyToPrev && window.flyToPrev();" aria-label="Previous milestone" title="Fly Back">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M10 3 5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button type="button" class="ctrl-btn" onclick="window.flyToNext && window.flyToNext();" aria-label="Fly forward">
+      <button type="button" class="ctrl-btn" onclick="window.flyToNext && window.flyToNext();" aria-label="Next milestone" title="Fly Forward">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button type="button" class="ctrl-btn" onclick="openBox('systems');" aria-label="View all systems list">
+      <button type="button" class="ctrl-btn" onclick="openBox('resume');" aria-label="Open full resume" title="Full Resume Dossier">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M3 4h10M3 8h10M3 12h10" stroke-linecap="round"/>
         </svg>
@@ -136,8 +167,8 @@
     </div>
   </div>
 
-  <!-- Slide-out Panel (.box) -->
-  <aside class="box" id="box" aria-label="Details Drawer">
+  <!-- Slide-Out Interactive Portfolio Drawer (.box) -->
+  <aside class="box" id="box" aria-label="Interactive Portfolio Dossier">
     <div class="v-head">
       <button type="button" class="back-link" onclick="closeBox()">
         <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
@@ -145,213 +176,514 @@
         </svg>
         <span>Close</span>
       </button>
-      <span class="view-indicator" id="view-indicator">Systems</span>
+
+      <div class="drawer-tabs">
+        <button type="button" class="d-tab active" data-tab="experience" onclick="switchView('experience')">Experience</button>
+        <button type="button" class="d-tab" data-tab="ventures" onclick="switchView('ventures')">Ventures & Projects</button>
+        <button type="button" class="d-tab" data-tab="education" onclick="switchView('education')">Education & Honours</button>
+        <button type="button" class="d-tab" data-tab="resume" onclick="switchView('resume')">Full Resume</button>
+        <button type="button" class="d-tab" data-tab="contact" onclick="switchView('contact')">Connect</button>
+      </div>
     </div>
 
     <div class="p-scroll">
-      <!-- 1. Systems List View -->
-      <section class="view active" id="view-systems">
-        <h2>Production <em>Systems</em></h2>
+      <!-- 1. EXPERIENCE VIEW (Internships & Roles) -->
+      <section class="view active" id="view-experience">
+        <h2>Career & <em>Experience</em></h2>
         <p class="box-sub">
-          Autonomous data extraction infrastructure, live Apify actor fleets, and agent-native MCP servers built for scale and sub-second latency.
+          Operating across NYC venture capital, CEO's office strategy, Dubai hedge fund research, and tax & portfolio advisory. Click any role for deep-dive metrics.
         </p>
 
         <div class="systems-grid">
+          <!-- ThirdBase Capital -->
           <article class="sys-card" onclick="openSystemDetail(0)">
             <div class="sys-header">
-              <span class="sys-title">Scrapers.tech</span>
-              <span class="sys-badge">LIVE • HUB</span>
+              <div>
+                <div class="sys-title">ThirdBase Capital</div>
+                <div class="sys-role">Venture Capital Intern  •  NYC Venture Fund (SaaS, Fintech, Healthtech & AI)</div>
+              </div>
+              <span class="sys-badge">Feb '26 – Present • Remote</span>
             </div>
-            <p class="sys-desc">Central catalog and execution engine coordinating 24 production scrapers for AI agents and enterprise operators.</p>
+            <ul class="bullet-list">
+              <li>Sourced an <strong>LP who committed $500K</strong> as an investor and strategic advisor to the fund.</li>
+              <li>Built a curated database of <strong>3,000+ VP & Head-level engineers</strong> to accelerate deal sourcing and portfolio talent support.</li>
+              <li>Scaled a <strong>50+ senior technologist community across the US</strong>, directly contributing to <strong>2 co-investments</strong>.</li>
+              <li>Drove targeted outreach to senior technologists, enabling SPVs, talent support, and technical due diligence insights.</li>
+            </ul>
             <div class="sys-footer">
-              <span class="tag">Distributed Mesh</span>
-              <span class="tag">AI MCP Bridge</span>
-              <span class="tag">Node 24</span>
+              <span class="tag">$500K LP Sourced</span>
+              <span class="tag">2 Co-Investments</span>
+              <span class="tag">3,000+ VP Database</span>
+              <span class="tag">SPV Structuring</span>
             </div>
           </article>
 
+          <!-- Aviva India -->
           <article class="sys-card" onclick="openSystemDetail(1)">
             <div class="sys-header">
-              <span class="sys-title">Apify Cloud Actor Fleet</span>
-              <span class="sys-badge">24 ACTORS</span>
+              <div>
+                <div class="sys-title">Aviva India</div>
+                <div class="sys-role">CEO's Office Intern  •  Life & Health Insurer backed by Aviva plc (25+ yrs in India)</div>
+              </div>
+              <span class="sys-badge">Jun '26 – Aug '26 • Gurugram</span>
             </div>
-            <p class="sys-desc">Containerized serverless scrapers monetized under Pay-Per-Event. All 24 actors maintain 10/10 quality scores.</p>
+            <ul class="bullet-list">
+              <li>Initiated <strong>15+ B2B strategic partnerships</strong> across insurtech, healthtech, fintech, and diagnostics ecosystems.</li>
+              <li>Led <strong>1 deal end-to-end with Fitelo (₹100 Crore+ revenue)</strong>; advanced 3 additional enterprise deals in pipeline at close.</li>
+              <li>Mapped end-to-end customer journey, tightened FLS follow-up cadences, and <strong>doubled conversion from 1% to 2%</strong>.</li>
+            </ul>
             <div class="sys-footer">
-              <span class="tag">Apify SDK</span>
-              <span class="tag">10/10 Quality</span>
-              <span class="tag">Pay-Per-Event</span>
+              <span class="tag">CEO's Office</span>
+              <span class="tag">15+ B2B Partnerships</span>
+              <span class="tag">Fitelo ₹100Cr+ Deal</span>
+              <span class="tag">2x Conversion Lift</span>
             </div>
           </article>
 
+          <!-- 2Cents Capital -->
           <article class="sys-card" onclick="openSystemDetail(2)">
             <div class="sys-header">
-              <span class="sys-title">Model Context Protocol</span>
-              <span class="sys-badge">PROTOCOL</span>
+              <div>
+                <div class="sys-title">2Cents Capital</div>
+                <div class="sys-role">Research Analyst Intern (Awarded PPO)  •  Dubai Hedge Fund ($25M AUM)</div>
+              </div>
+              <span class="sys-badge">Jun '24 – Dec '24 • Remote (Dubai)</span>
             </div>
-            <p class="sys-desc">Native MCP server interface bridging frontier reasoning models (Gemini, Claude, GPT) to live web intelligence.</p>
+            <ul class="bullet-list">
+              <li>Joined as one of the first interns when the team comprised only the founder and 3 full-time employees during the fund's <strong>0-to-1 growth phase</strong>.</li>
+              <li>Onboarded <strong>3+ custodians and 5+ brokers</strong>, ensuring cross-border regulatory compliance across <strong>India, Dubai, and GIFT City</strong>.</li>
+              <li>Generated <strong>40+ alpha in derivatives</strong> by synthesizing quantitative research papers into asset-level execution decisions.</li>
+              <li>Accelerated GTM execution by <strong>reducing product launch timelines by 30%</strong> through onboarding optimization and 100% regulatory adherence.</li>
+            </ul>
             <div class="sys-footer">
-              <span class="tag">MCP JSON-RPC</span>
-              <span class="tag">Agent Tooling</span>
-              <span class="tag">Streaming</span>
+              <span class="tag">Pre-Placement Offer (PPO)</span>
+              <span class="tag">$25M AUM</span>
+              <span class="tag">40+ Derivatives Alpha</span>
+              <span class="tag">GIFT City & Dubai Ops</span>
             </div>
           </article>
 
-          <article class="sys-card" onclick="openSystemDetail(3)">
+          <!-- Papneja Associates -->
+          <article class="sys-card" onclick="openSystemDetail(6)">
             <div class="sys-header">
-              <span class="sys-title">Headless Scraper Mesh</span>
-              <span class="sys-badge">RUNTIME</span>
+              <div>
+                <div class="sys-title">Papneja Associates</div>
+                <div class="sys-role">Tax Consultant Apprentice  •  GST, Income Tax & Financial Advisory</div>
+              </div>
+              <span class="sys-badge">May '20 – May '24 • Yamunanagar</span>
             </div>
-            <p class="sys-desc">Stealth browser cluster with dynamic canvas fingerprint emulation, TLS spoofing, and resilient IP rotation.</p>
+            <ul class="bullet-list">
+              <li>Generated <strong>₹1 Crore+ cumulative tax savings</strong> for clients through strategic tax structuring and advisory across <strong>100+ SMEs</strong>.</li>
+              <li>Designed SIP/SWP investment structures for diverse client portfolios exceeding <strong>₹5 Crore in aggregate value</strong>.</li>
+              <li>Handled <strong>2,000+ tax filings and 50+ litigation cases</strong>, achieving <strong>99% accuracy</strong> and <strong>90%+ favourable outcomes</strong>.</li>
+              <li>Automated legacy filing workflows to <strong>cut processing time by 30%</strong>, saving <strong>200+ hours annually</strong>.</li>
+            </ul>
             <div class="sys-footer">
-              <span class="tag">Puppeteer</span>
-              <span class="tag">Playwright</span>
-              <span class="tag">Stealth EV</span>
-            </div>
-          </article>
-
-          <article class="sys-card" onclick="openSystemDetail(4)">
-            <div class="sys-header">
-              <span class="sys-title">Review Aspect & Sentiment Miner</span>
-              <span class="sys-badge">NLP ENGINE</span>
-            </div>
-            <p class="sys-desc">Extracts multi-language customer sentiment, product flaw vectors, and competitor sentiment shifts at scale.</p>
-            <div class="sys-footer">
-              <span class="tag">NLP Aspect Mining</span>
-              <span class="tag">Sentiment Vectors</span>
-            </div>
-          </article>
-
-          <article class="sys-card" onclick="openSystemDetail(5)">
-            <div class="sys-header">
-              <span class="sys-title">Ecommerce Multi-Store Tracker</span>
-              <span class="sys-badge">COMMERCE</span>
-            </div>
-            <p class="sys-desc">Sub-second delta pricing and stock availability tracker across Amazon, Shopify, Depop, and major marketplaces.</p>
-            <div class="sys-footer">
-              <span class="tag">Sub-Second Delta</span>
-              <span class="tag">Stock Monitoring</span>
+              <span class="tag">₹1Cr+ Tax Savings</span>
+              <span class="tag">₹5Cr+ Portfolios</span>
+              <span class="tag">2,000+ Tax Filings</span>
+              <span class="tag">30% Process Automation</span>
             </div>
           </article>
         </div>
       </section>
 
-      <!-- 2. System Detail View -->
+      <!-- 2. VENTURES & PROJECTS VIEW -->
+      <section class="view" id="view-ventures">
+        <h2>Ventures & <em>Projects</em></h2>
+        <p class="box-sub">
+          Zero-to-one commercial execution across e-commerce brands, autonomous data infrastructure, and business media.
+        </p>
+
+        <div class="systems-grid">
+          <!-- Pegster -->
+          <article class="sys-card" onclick="openSystemDetail(5)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Pegster — D2C & Dropshipping Venture</div>
+                <div class="sys-role">Founder  •  Consumer Products ("Drinking Games" Niche)</div>
+              </div>
+              <span class="sys-badge">2025</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Built and scaled a consumer dropshipping business from scratch in <strong>just 2 months</strong>, achieving <strong>₹4,00,000+ in sales</strong> in the "Drinking Games" niche.</li>
+              <li>Generated <strong>₹36,000 in live sales during the Dropshipping Mela event alone</strong>, demonstrating rapid GTM and unit-economics execution.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">₹4,00,000+ Sales in 2 Months</span>
+              <span class="tag">₹36K Event Revenue</span>
+              <span class="tag">D2C Growth</span>
+            </div>
+          </article>
+
+          <!-- Finance & Business Content Creation -->
+          <article class="sys-card" onclick="openSystemDetail(4)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Finance & Business Case Study Channel</div>
+                <div class="sys-role">Creator & Host  •  YouTube & Short-Form Media</div>
+              </div>
+              <span class="sys-badge">2020 – 2026</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Launched and scaled a YouTube channel focused on equity markets, finance, and personal growth to <strong>2,000+ subscribers</strong>.</li>
+              <li>Drove <strong>500,000+ cumulative organic views</strong> through Reels and Shorts dissecting business breakdowns and market case studies.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">500,000+ Organic Views</span>
+              <span class="tag">2,000+ Subscribers</span>
+              <span class="tag">Business Breakdowns</span>
+            </div>
+          </article>
+
+          <!-- Scrapers.tech -->
+          <article class="sys-card" onclick="window.open('https://scrapers.tech', '_blank')">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Scrapers.tech & Apify Automation Fleet</div>
+                <div class="sys-role">Systems Architect  •  24 Public Cloud Scrapers & AI MCP Hub</div>
+              </div>
+              <span class="sys-badge">2026 • Live</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Architected <strong>Scrapers.tech</strong> and deployed <strong>24 production cloud actors</strong> on the Apify Store monetized under Pay-Per-Event.</li>
+              <li>Powers automated B2B lead enrichment, VP/engineer sourcing databases, e-commerce price tracking, and AI agent MCP workflows.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">scrapers.tech ↗</span>
+              <span class="tag">24 Public Actors</span>
+              <span class="tag">10/10 Quality Score</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. EDUCATION & HONOURS VIEW -->
+      <section class="view" id="view-education">
+        <h2>Education & <em>Honours</em></h2>
+        <p class="box-sub">
+          Academic distinction, national scholarships, investment fund leadership, and state-level athletics.
+        </p>
+
+        <div class="systems-grid">
+          <!-- Masters' Union -->
+          <article class="sys-card" onclick="openSystemDetail(3)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Masters' Union, Gurugram</div>
+                <div class="sys-role">PGP in Technology & Business Management</div>
+              </div>
+              <span class="sys-badge">2025 – Present</span>
+            </div>
+            <ul class="bullet-list">
+              <li><strong>Masters' Union Investment Fund:</strong> Selected as <strong>1 of 13 members out of 330+ students</strong> managing real capital allocations.</li>
+              <li><strong>Merit-Based Scholarship:</strong> Awarded <strong>25% tuition fee waiver</strong>, granted to the <strong>top 5%</strong> of the 330+ student cohort.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">Top 5% Merit Scholar</span>
+              <span class="tag">Investment Fund (13/330+)</span>
+              <span class="tag">Gurugram</span>
+            </div>
+          </article>
+
+          <!-- Josh Talks -->
+          <article class="sys-card" onclick="openSystemDetail(4)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Josh Talks & Podcasts Speaker</div>
+                <div class="sys-role">Featured Speaker  •  YouTube Channel with 10M+ Subscribers</div>
+              </div>
+              <span class="sys-badge">2023</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Invited to speak on <strong>equity markets, investing psychology, early career learnings, and market growth outlook</strong>.</li>
+              <li>Garnered <strong>2 Million+ views and 5 Million+ impressions</strong> across platforms, demonstrating high audience resonance.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">2M+ Views</span>
+              <span class="tag">5M+ Impressions</span>
+              <span class="tag">10M+ Subscriber Platform</span>
+            </div>
+          </article>
+
+          <!-- Reliance Foundation Scholar -->
+          <article class="sys-card" onclick="openSystemDetail(7)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Reliance Foundation Undergraduate Scholar</div>
+                <div class="sys-role">National Merit Scholarship  •  Reliance Foundation</div>
+              </div>
+              <span class="sys-badge">2023</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Awarded the prestigious <strong>₹1.5 Lakh Reliance Foundation Scholarship</strong>, selected among the <strong>top 5,000 out of 50,000+ applicants nationwide</strong>.</li>
+              <li>Inducted into the Reliance Foundation Scholars alumni network for lifelong mentorship and leadership development.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">Top 5,000 / 50,000+ Nationwide</span>
+              <span class="tag">₹1.5 Lakh Grant</span>
+            </div>
+          </article>
+
+          <!-- Guru Nanak Khalsa College -->
+          <article class="sys-card" onclick="openSystemDetail(7)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">Guru Nanak Khalsa College, Kurukshetra University</div>
+                <div class="sys-role">Bachelor of Commerce (B.Com)  •  Core Member, Finance Club</div>
+              </div>
+              <span class="sys-badge">2022 – 2025 • Yamunanagar</span>
+            </div>
+            <ul class="bullet-list">
+              <li>Cleared <strong>CA Foundation in first attempt</strong>.</li>
+              <li>Delivered a guest session on stock markets and equity investing to <strong>200+ engineering students at IIIT Una</strong>.</li>
+              <li>Core Member of the college Finance Club & recipient of the ₹1.5L Reliance Foundation Scholarship.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">CA Foundation (1st Attempt)</span>
+              <span class="tag">IIIT Una Speaker (200+ Students)</span>
+            </div>
+          </article>
+
+          <!-- State Level Badminton & School Leadership -->
+          <article class="sys-card" onclick="openSystemDetail(7)">
+            <div class="sys-header">
+              <div>
+                <div class="sys-title">State-Level Badminton & Debate Leadership</div>
+                <div class="sys-role">Government of Haryana & Mukand Lal Public School</div>
+              </div>
+              <span class="sys-badge">2020 – 2022</span>
+            </div>
+            <ul class="bullet-list">
+              <li><strong>State-Level Badminton (Haryana):</strong> Secured <strong>3rd place at District Level (U-17)</strong>, represented city at State Level, and ranked <strong>top 10 of 30 cities</strong>.</li>
+              <li><strong>Debate & Academics:</strong> Won <strong>20+ Intra & Inter-School Debates & Declamations</strong>; Student Head of Annual Inter-School Debate (30+ Schools).</li>
+              <li><strong>CBSE Board Examinations:</strong> Class 12: <strong>86.5%</strong>  |  Class 10: <strong>85.4%</strong>.</li>
+            </ul>
+            <div class="sys-footer">
+              <span class="tag">State Badminton (Top 10 Cities)</span>
+              <span class="tag">20+ Debate Trophies</span>
+              <span class="tag">CBSE XII: 86.5%</span>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 4. COMPLETE INTERACTIVE RESUME DOSSIER VIEW -->
+      <section class="view" id="view-resume">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h2>Curriculum <em>Vitae</em></h2>
+            <p class="box-sub">Lakshay Papneja  •  ylc27lakshay.papneja@mastersunion.org  •  Gurugram, IN</p>
+          </div>
+          <button type="button" class="primary-btn" onclick="window.print()">
+            <span>Print / Save PDF</span> ↓
+          </button>
+        </div>
+
+        <!-- Core Competencies Matrix -->
+        <div class="facts-grid">
+          <div class="fact-card">
+            <span class="fact-title">Technical & Financial Skills</span>
+            <p class="fact-val">Market & Competitor Analysis • Customer Journey Analysis • Investment Structuring (SIP/SWP) • Derivatives Alpha Research • LP & Deal Sourcing • Web Data Automation</p>
+          </div>
+          <div class="fact-card">
+            <span class="fact-title">Business & Strategic Skills</span>
+            <p class="fact-val">Stakeholder Management • B2B Strategic Partnerships • CEO's Office Execution • Problem Solving • Process Optimization • 0-to-1 GTM Scaling</p>
+          </div>
+        </div>
+
+        <!-- Key Numbers Banner -->
+        <div class="detail-banner">
+          <div class="detail-stats">
+            <div class="stat-item">
+              <span class="stat-num">$500K</span>
+              <span class="stat-label">VC LP Sourced</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">15+ Deals</span>
+              <span class="stat-label">Aviva CEO's Office</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-num">2M+ Views</span>
+              <span class="stat-label">Josh Talks Speaker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <span class="resume-sec-title">01 / Internships & Work Experience</span>
+          <div class="systems-grid">
+            <div class="sys-card" onclick="openSystemDetail(1)">
+              <div class="sys-header">
+                <span class="sys-title">Aviva India — CEO's Office Intern</span>
+                <span class="sys-badge">Jun '26 – Aug '26 | Gurugram</span>
+              </div>
+              <p class="sys-desc">Initiated 15+ B2B partnerships across insurtech, healthtech, fintech & diagnostics • Led Fitelo (₹100Cr+ revenue) deal end-to-end + 3 in pipeline • Doubled FLS conversion from 1% to 2%.</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(0)">
+              <div class="sys-header">
+                <span class="sys-title">ThirdBase Capital (NYC) — Venture Capital Intern</span>
+                <span class="sys-badge">Feb '26 – Present | Remote</span>
+              </div>
+              <p class="sys-desc">Sourced $500K LP investor & strategic advisor • Built 3,000+ VP/Head engineer database • Built 50+ US senior technologist community contributing to 2 co-investments & SPVs.</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(2)">
+              <div class="sys-header">
+                <span class="sys-title">2Cents Capital (Dubai, $25M AUM) — Research Analyst Intern (PPO)</span>
+                <span class="sys-badge">Jun '24 – Dec '24 | Remote</span>
+              </div>
+              <p class="sys-desc">0-to-1 growth team with founder • Onboarded 3+ custodians & 5+ brokers (India, Dubai, GIFT City) • 40+ alpha in derivatives • Cut launch timelines 30% with 100% regulatory adherence.</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(6)">
+              <div class="sys-header">
+                <span class="sys-title">Papneja Associates — Tax Consultant Apprentice</span>
+                <span class="sys-badge">May '20 – May '24 | Yamunanagar</span>
+              </div>
+              <p class="sys-desc">2,000+ tax filings & 50+ litigation cases (99% accuracy, 90%+ favourable) • ₹5Cr+ SIP/SWP portfolios • ₹1Cr+ client tax savings across 100+ SMEs • Automated systems saving 200+ hrs/yr.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <span class="resume-sec-title">02 / Education</span>
+          <div class="systems-grid">
+            <div class="sys-card" onclick="openSystemDetail(3)">
+              <div class="sys-header">
+                <span class="sys-title">Masters' Union, Gurugram — PGP in Tech & Business Management</span>
+                <span class="sys-badge">2025 – Present</span>
+              </div>
+              <p class="sys-desc">Member of Masters' Union Investment Fund (13 / 330+) • Awarded Merit-Based Scholarship (25% tuition waiver, top 5% of cohort).</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(7)">
+              <div class="sys-header">
+                <span class="sys-title">Guru Nanak Khalsa College, Kurukshetra University — B.Com</span>
+                <span class="sys-badge">2022 – 2025</span>
+              </div>
+              <p class="sys-desc">₹1.5L Reliance Foundation Scholar • Cleared CA Foundation (1st attempt) • Core Member of Finance Club • Conducted stock market session for 200+ students at IIIT Una.</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(7)">
+              <div class="sys-header">
+                <span class="sys-title">Mukand Lal Public School, Yamunanagar</span>
+                <span class="sys-badge">2020 – 2022</span>
+              </div>
+              <p class="sys-desc">CBSE Class 12: 86.5% | Class 10: 85.4% • Student Head of Annual Inter-School Debate (30+ Schools) • Won 20+ Intra & Inter-School Debates & Declamations.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="resume-section">
+          <span class="resume-sec-title">03 / Ventures & Achievements</span>
+          <div class="systems-grid">
+            <div class="sys-card" onclick="openSystemDetail(5)">
+              <div class="sys-header">
+                <span class="sys-title">Pegster (Dropshipping) • YouTube (500K+ Views) • Scrapers.tech</span>
+                <span class="sys-badge">2020 – 2026</span>
+              </div>
+              <p class="sys-desc">Scaled Pegster to ₹4,00,000+ sales in 2 months (₹36K at Dropshipping Mela) • Scaled finance YouTube & Reels to 500,000+ views & 2,000+ subscribers • Built Scrapers.tech (24 live cloud actors).</p>
+            </div>
+
+            <div class="sys-card" onclick="openSystemDetail(4)">
+              <div class="sys-header">
+                <span class="sys-title">Josh Talks Speaker (2M+ Views) • Reliance Scholar • State Badminton</span>
+                <span class="sys-badge">2020 – 2023</span>
+              </div>
+              <p class="sys-desc">2M+ views & 5M+ impressions on Josh Talks (10M+ subs) • Top 5,000 of 50,000+ in Reliance Foundation Scholarship • 3rd in District U-17 & Top 10 of 30 cities in Haryana State Badminton.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. MILESTONE DEEP-DIVE DETAIL VIEW -->
       <section class="view" id="view-detail">
-        <button type="button" class="back-link" style="align-self: flex-start;" onclick="switchView('systems')">
-          ← Back to systems
+        <button type="button" class="back-link" style="align-self: flex-start;" onclick="switchView('experience')">
+          ← Back to overview
         </button>
 
-        <h2 id="detail-title">System <em>Title</em></h2>
-        <p class="box-sub" id="detail-desc">Detailed system description goes here.</p>
+        <h2 id="detail-title">Milestone <em>Title</em></h2>
+        <p class="box-sub" id="detail-desc">Detailed milestone description.</p>
 
         <div class="detail-banner">
           <div class="detail-stats">
             <div class="stat-item">
-              <span class="stat-num" id="stat-1-val">24</span>
-              <span class="stat-label" id="stat-1-lbl">Live Actors</span>
+              <span class="stat-num" id="stat-1-val">$500K</span>
+              <span class="stat-label" id="stat-1-lbl">Metric 1</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num" id="stat-2-val">10/10</span>
-              <span class="stat-label" id="stat-2-lbl">Quality Score</span>
+              <span class="stat-num" id="stat-2-val">3,000+</span>
+              <span class="stat-label" id="stat-2-lbl">Metric 2</span>
             </div>
             <div class="stat-item">
-              <span class="stat-num" id="stat-3-val">99.9%</span>
-              <span class="stat-label" id="stat-3-lbl">Execution Uptime</span>
+              <span class="stat-num" id="stat-3-val">2 Deals</span>
+              <span class="stat-label" id="stat-3-lbl">Metric 3</span>
             </div>
           </div>
         </div>
 
+        <ul class="bullet-list" id="detail-bullets" style="margin-top: 6px;"></ul>
+
         <div class="action-row">
-          <a href="#" class="primary-btn" id="detail-primary-btn" target="_blank" rel="noopener">
-            <span>Explore Live System</span> →
-          </a>
-          <button type="button" class="secondary-btn" onclick="openBox('contact')">
-            Discuss Architecture
+          <button type="button" class="primary-btn" onclick="openBox('contact')">
+            <span>Discuss Role / Collaboration</span> →
+          </button>
+          <button type="button" class="secondary-btn" onclick="switchView('resume')">
+            View Full Resume
           </button>
         </div>
       </section>
 
-      <!-- 3. About View -->
-      <section class="view" id="view-about">
-        <h2>About & <em>Philosophy</em></h2>
+      <!-- 6. CONNECT / OPPORTUNITY BRIEF VIEW -->
+      <section class="view" id="view-contact">
+        <h2>Let's <em>Connect</em></h2>
         <p class="box-sub">
-          I design and scale autonomous data systems that turn raw, unstructured web noise into clean, deterministic intelligence for human engineers and autonomous agents alike.
+          Whether it's Venture Capital, Founder's / CEO's Office roles, strategic partnerships, or building high-velocity ventures — I read every message directly.
         </p>
 
         <div class="facts-grid">
-          <div class="fact-card">
-            <span class="fact-title">Philosophy</span>
-            <p class="fact-val"><strong>Simple systems fail simply.</strong> No speculative abstractions. Deterministic pipelines with explicit failure boundaries.</p>
-          </div>
-          <div class="fact-card">
-            <span class="fact-title">UX, DX & AX</span>
-            <p class="fact-val">Speed is user experience, developer experience, and agent experience simultaneously. Sub-10ms latency matters.</p>
-          </div>
-          <div class="fact-card">
-            <span class="fact-title">Core Stack</span>
-            <p class="fact-val">Node.js, Three.js, Python, Model Context Protocol (MCP), Puppeteer/Playwright, Docker, Redis, Apify Cloud.</p>
-          </div>
-          <div class="fact-card">
-            <span class="fact-title">Track Record</span>
-            <p class="fact-val">24 production cloud actors published and monetized on Apify Store with 10/10 verified quality scores.</p>
-          </div>
+          <a href="mailto:ylc27lakshay.papneja@mastersunion.org" class="fact-card" style="border-color: rgba(52, 211, 153, 0.35);">
+            <span class="fact-title">Masters' Union Email</span>
+            <p class="fact-val">ylc27lakshay.papneja@mastersunion.org ↗</p>
+          </a>
+          <a href="https://www.linkedin.com/in/lakshay-papneja/" target="_blank" rel="noopener" class="fact-card">
+            <span class="fact-title">Professional Network</span>
+            <p class="fact-val">LinkedIn Profile ↗</p>
+          </a>
         </div>
-
-        <div class="action-row" style="margin-top: 14px;">
-          <a href="https://github.com/ylc27lakshaypapneja-hue" target="_blank" rel="noopener" class="secondary-btn">GitHub</a>
-          <a href="https://scrapers.tech" target="_blank" rel="noopener" class="secondary-btn">Scrapers.tech</a>
-          <a href="https://apify.com/laborious_rumor" target="_blank" rel="noopener" class="secondary-btn">Apify Profile</a>
-          <a href="mailto:thefinancialnerds@gmail.com" class="primary-btn">Email Me</a>
-        </div>
-      </section>
-
-      <!-- 4. Contact / Start a Project View -->
-      <section class="view" id="view-contact">
-        <h2>Start a <em>Project</em></h2>
-        <p class="box-sub">
-          Tell me what you're building. Whether you need a resilient data harvesting mesh, custom MCP server, or end-to-end scraper pipeline.
-        </p>
 
         <form class="cform" id="contact-form" onsubmit="handleFormSubmit(event)">
           <div class="field">
-            <label for="c-name">Your Name</label>
-            <input type="text" id="c-name" required placeholder="Name or Team">
+            <label for="c-name">Your Name & Organization</label>
+            <input type="text" id="c-name" required placeholder="e.g. Partner at Sequoia / Founder at XYZ">
           </div>
 
           <div class="field">
-            <label for="c-email">Email Address</label>
+            <label for="c-email">Your Email</label>
             <input type="email" id="c-email" required placeholder="you@company.com">
           </div>
 
           <div class="field">
-            <span>What do you need?</span>
+            <span>What are we discussing?</span>
             <div class="chips">
-              <label class="chip"><input type="checkbox" name="need" value="Data Infrastructure"><span>Data Infrastructure</span></label>
-              <label class="chip"><input type="checkbox" name="need" value="Custom Scraper" checked><span>Custom Scrapers</span></label>
-              <label class="chip"><input type="checkbox" name="need" value="MCP Server"><span>MCP Server</span></label>
-              <label class="chip"><input type="checkbox" name="need" value="AI Agent Tooling"><span>AI Agent Tooling</span></label>
-              <label class="chip"><input type="checkbox" name="need" value="Consulting"><span>Architecture</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="Venture Capital / Investing" checked><span>Venture Capital</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="CEO / Founder's Office"><span>CEO / Founder's Office</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="B2B Partnerships & Growth"><span>Strategic Partnerships</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="Data & AI Systems"><span>Data / AI Systems</span></label>
+              <label class="chip"><input type="checkbox" name="need" value="Speaking / Podcast"><span>Speaking / Media</span></label>
             </div>
           </div>
 
           <div class="field">
-            <span>Estimated Scope / Budget</span>
-            <div class="chips">
-              <label class="chip"><input type="radio" name="budget" value="Under $5k"><span>Under $5k</span></label>
-              <label class="chip"><input type="radio" name="budget" value="$5k - $15k" checked><span>$5k – $15k</span></label>
-              <label class="chip"><input type="radio" name="budget" value="$15k+"><span>$15k+</span></label>
-              <label class="chip"><input type="radio" name="budget" value="Advisory"><span>Advisory</span></label>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="c-msg">About the Project</label>
-            <textarea id="c-msg" rows="3" required placeholder="What platforms are you scraping or what agent system are you building?"></textarea>
+            <label for="c-msg">Note / Context</label>
+            <textarea id="c-msg" rows="3" required placeholder="Share a quick note on the role, deal, or collaboration..."></textarea>
           </div>
 
           <div class="c-foot">
-            <button type="submit" class="primary-btn">Send Brief</button>
-            <p class="c-note">Or email directly to <a href="mailto:thefinancialnerds@gmail.com">thefinancialnerds@gmail.com</a></p>
+            <button type="submit" class="primary-btn">Send Note →</button>
+            <p class="c-note">Or write directly to <a href="mailto:ylc27lakshay.papneja@mastersunion.org">ylc27lakshay.papneja@mastersunion.org</a></p>
           </div>
         </form>
       </section>
@@ -361,16 +693,16 @@
   <!-- Interactive HUD Tooltip -->
   <div class="hud" id="hud">
     <span class="status-dot"></span>
-    <span id="hud-text">Scrapers.tech • Click to inspect</span>
+    <span id="hud-text">ThirdBase Capital • Click to inspect</span>
   </div>
 
-  <!-- Loader with SVG stroke drawing -->
+  <!-- Loader -->
   <div class="loader" id="loader">
     <svg class="ld-mark" viewBox="0 0 100 100" fill="none">
       <path class="ld-path" d="M20 20 L20 80 L80 80" stroke="#f2f2f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
       <path class="ld-path" d="M20 50 L60 50 A 15 15 0 0 0 60 20 L20 20" stroke="#f2f2f2" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
-    <span class="ld-label">Initializing Cosmos</span>
+    <span class="ld-label">Loading Lakshay Papneja Portfolio</span>
   </div>
 
   <!-- Three.js CDN -->
@@ -378,7 +710,7 @@
   <!-- Cosmos 3D script -->
   <script src="cosmos.js"></script>
 
-  <!-- Main interactive UI logic -->
+  <!-- Main Interactive Portfolio Logic -->
   <script>
     // Live Indian Standard Time (IST) Clock
     function updateLiveTime() {
@@ -391,20 +723,20 @@
     setInterval(updateLiveTime, 1000);
     updateLiveTime();
 
-    // Box views manager
     const box = document.getElementById("box");
-    const viewIndicator = document.getElementById("view-indicator");
     const views = {
-      systems: document.getElementById("view-systems"),
+      experience: document.getElementById("view-experience"),
+      ventures: document.getElementById("view-ventures"),
+      education: document.getElementById("view-education"),
+      resume: document.getElementById("view-resume"),
       detail: document.getElementById("view-detail"),
-      about: document.getElementById("view-about"),
       contact: document.getElementById("view-contact")
     };
 
     window.openBox = function(viewName) {
       document.body.classList.add("boxed");
       box.classList.add("open");
-      switchView(viewName || "systems");
+      switchView(viewName || "experience");
     };
 
     window.closeBox = function() {
@@ -418,73 +750,118 @@
       });
       if (views[viewName]) {
         views[viewName].classList.add("active");
-        viewIndicator.textContent = viewName.toUpperCase();
       }
+      document.querySelectorAll(".d-tab").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-tab") === viewName);
+      });
     };
 
-    // Deep-dive detail data
+    // Detailed Dossier Records matching the 8 3D Cosmos cards
     const detailData = [
       {
-        title: "Scrapers.tech",
-        desc: "Central production hub and real-time execution engine coordinating 24 autonomous scrapers. Exposes streaming endpoints and standardized schema for autonomous agents and enterprise data workflows.",
-        stat1Val: "24", stat1Lbl: "Live Actors",
-        stat2Val: "Sub-Sec", stat2Lbl: "API Response",
-        stat3Val: "99.9%", stat3Lbl: "System Uptime",
-        link: "https://scrapers.tech",
-        btnText: "Open Scrapers.tech"
+        title: "ThirdBase <em>Capital (NYC)</em>",
+        desc: "Venture Capital Intern (Feb '26 – Present, Remote) at an NYC venture fund investing across SaaS, Fintech, Healthtech, and AI.",
+        stat1Val: "$500K", stat1Lbl: "LP Commitment Sourced",
+        stat2Val: "3,000+", stat2Lbl: "VP & Head Engineer DB",
+        stat3Val: "2 Deals", stat3Lbl: "Co-Investments Enabled",
+        bullets: [
+          "Sourced an LP who committed <strong>$500K</strong> as an investor and strategic advisor to the fund.",
+          "Built a structured database of <strong>3,000+ VP & Head-level engineers</strong> to strengthen deal sourcing and portfolio support.",
+          "Built a <strong>50+ senior technologist community across the US</strong>, directly contributing to <strong>2 co-investments</strong>.",
+          "Drove targeted outreach to senior technologists, enabling SPVs, talent support, and strategic technical insights."
+        ]
       },
       {
-        title: "Apify Cloud Actor Fleet",
-        desc: "Fleet of 24 serverless, containerized cloud scrapers monetized under Pay-Per-Event on the official Apify Store under handle @laborious_rumor. Every actor holds a 10/10 quality score with automated error self-healing.",
-        stat1Val: "24", stat1Lbl: "Published Actors",
-        stat2Val: "10/10", stat2Lbl: "Quality Score",
-        stat3Val: "PPE", stat3Lbl: "Monetization",
-        link: "https://apify.com/laborious_rumor",
-        btnText: "View Apify Profile"
+        title: "Aviva India — <em>CEO's Office</em>",
+        desc: "CEO's Office Intern (Jun '26 – Aug '26, Gurugram) at Aviva India, a leading life & health insurer backed by Aviva plc with 25+ years in India.",
+        stat1Val: "15+ B2B", stat1Lbl: "Partnerships Initiated",
+        stat2Val: "₹100Cr+", stat2Lbl: "Fitelo Partner Revenue",
+        stat3Val: "1% → 2%", stat3Lbl: "Doubled Conversion",
+        bullets: [
+          "Initiated <strong>15+ B2B partnerships</strong> across insurtech, healthtech, fintech, and diagnostics.",
+          "Led <strong>1 deal end-to-end with Fitelo (₹100 Crore+ revenue)</strong>, with 3 more strategic deals in pipeline at close.",
+          "Mapped the end-to-end customer journey, tightened FLS follow-ups, and <strong>doubled conversion from 1% to 2%</strong>."
+        ]
       },
       {
-        title: "Model Context Protocol (MCP)",
-        desc: "Native MCP tooling and JSON-RPC servers allowing frontier LLMs (Gemini, Claude, GPT) to autonomously call web crawlers, search structured intelligence, and bypass CAPTCHAs in real-time execution loops.",
-        stat1Val: "Native", stat1Lbl: "MCP Protocol",
-        stat2Val: "JSON-RPC", stat2Lbl: "Standard",
-        stat3Val: "Zero-Lag", stat3Lbl: "Streaming",
-        link: "https://github.com/ylc27lakshaypapneja-hue",
-        btnText: "View GitHub Repos"
+        title: "2Cents Capital <em>(Dubai Hedge Fund)</em>",
+        desc: "Research Analyst Intern — Awarded PPO (Jun '24 – Dec '24, Remote) at a Dubai-based hedge fund managing $25 Million AUM.",
+        stat1Val: "$25M", stat1Lbl: "Fund AUM",
+        stat2Val: "40+ Alpha", stat2Lbl: "Derivatives Research",
+        stat3Val: "-30%", stat3Lbl: "Launch Timeline Cut",
+        bullets: [
+          "Joined as one of the first interns when the team comprised only the founder and 3 full-time employees during the fund's <strong>0-to-1 growth phase</strong>.",
+          "Onboarded <strong>3+ custodians and 5+ brokers</strong>, ensuring compliance across <strong>India, Dubai, and GIFT City</strong>.",
+          "Generated <strong>40+ alpha in derivatives</strong> by leveraging academic and quantitative research papers for asset-level decisions.",
+          "Coordinated cross-functional execution across tech, compliance, and ops with <strong>100% regulatory adherence</strong>, reducing launch timelines by <strong>30%</strong>."
+        ]
       },
       {
-        title: "Headless Scraper Mesh",
-        desc: "Anti-bot evasion cluster utilizing Playwright and Puppeteer with TLS fingerprint emulation, WebGL canvas spoofing, and automatic residential IP pooling capable of surviving stringent cloudflare and datadome challenges.",
-        stat1Val: "100%", stat1Lbl: "Fingerprint Spoof",
-        stat2Val: "Multi-Cloud", stat2Lbl: "Topology",
-        stat3Val: "Stealth", stat3Lbl: "Detection Mode",
-        link: "https://scrapers.tech",
-        btnText: "Explore Mesh"
+        title: "Masters' Union <em>Gurugram</em>",
+        desc: "Pursuing PGP in Technology & Business Management (2025 – Present, Gurugram).",
+        stat1Val: "13 / 330+", stat1Lbl: "Investment Fund Member",
+        stat2Val: "Top 5%", stat2Lbl: "Merit Scholarship",
+        stat3Val: "25%", stat3Lbl: "Tuition Waiver",
+        bullets: [
+          "Selected as <strong>1 of 13 members (among 330+ students)</strong> in the student-run <strong>Masters' Union Investment Fund</strong>.",
+          "Awarded the <strong>Merit-Based Scholarship (25% of tuition fee)</strong>, granted to the <strong>top 5%</strong> of the cohort."
+        ]
       },
       {
-        title: "Review Aspect & Sentiment Miner",
-        desc: "Multi-language NLP engine that deconstructs millions of user reviews, Reddit threads, and forum debates into granular sentiment vectors, defect alerts, and competitor feature rankings.",
-        stat1Val: "Aspect", stat1Lbl: "NLP Mining",
-        stat2Val: "50+ Langs", stat2Lbl: "Coverage",
-        stat3Val: "Real-Time", stat3Lbl: "Delta Feed",
-        link: "https://apify.com/laborious_rumor",
-        btnText: "Test Miner on Apify"
+        title: "Josh Talks <em>& Media</em>",
+        desc: "Invited Speaker on Josh Talks (10M+ Subscribers YouTube Channel) & Finance Content Creator (2020 – 2026).",
+        stat1Val: "2M+", stat1Lbl: "Josh Talks Views",
+        stat2Val: "5M+", stat2Lbl: "Cross-Platform Impressions",
+        stat3Val: "500K+", stat3Lbl: "Personal Channel Views",
+        bullets: [
+          "Invited by <strong>Josh Talks (10M+ subscribers)</strong> in 2023 to speak on equity markets, investing psychology, and early career learnings.",
+          "Garnered <strong>2 Million+ views and 5 Million+ impressions</strong> across platforms.",
+          "Scaled personal finance & business breakdown YouTube channel to <strong>2,000+ subscribers</strong> and <strong>500,000+ views</strong> across Reels & Shorts."
+        ]
       },
       {
-        title: "Ecommerce Multi-Store Tracker",
-        desc: "High-precision pricing and stock availability tracker observing Amazon, Depop, Shopify, and niche marketplaces to trigger automated arbitrage and inventory replenishment signals.",
-        stat1Val: "Sub-Second", stat1Lbl: "Price Change Alert",
-        stat2Val: "Multi-Store", stat2Lbl: "Platform Support",
-        stat3Val: "Automated", stat3Lbl: "Arbitrage Feed",
-        link: "https://apify.com/laborious_rumor",
-        btnText: "View Tracker"
+        title: "Pegster & <em>Scrapers.tech</em>",
+        desc: "Zero-to-one commercial execution across consumer e-commerce (Pegster) and B2B web data infrastructure (Scrapers.tech).",
+        stat1Val: "₹4,00,000+", stat1Lbl: "Pegster Sales in 2 Mo",
+        stat2Val: "₹36,000", stat2Lbl: "Dropshipping Mela Sales",
+        stat3Val: "24 Actors", stat3Lbl: "Live on Scrapers.tech",
+        bullets: [
+          "Built <strong>Pegster</strong> in just 2 months in 2025, generating <strong>₹4,00,000+ in sales</strong> in the 'Drinking Games' niche.",
+          "Generated <strong>₹36,000 in sales during the Dropshipping Mela event alone</strong>.",
+          "Built <strong>Scrapers.tech</strong> and published <strong>24 monetized cloud actors</strong> on the Apify Store for automated B2B intelligence."
+        ]
+      },
+      {
+        title: "Papneja <em>Associates</em>",
+        desc: "Tax Consultant Apprentice (May '20 – May '24, Yamunanagar) — GST, Income Tax & Financial Advisory.",
+        stat1Val: "₹1 Cr+", stat1Lbl: "Client Tax Savings",
+        stat2Val: "₹5 Cr+", stat2Lbl: "SIP/SWP Portfolios",
+        stat3Val: "2,000+", stat3Lbl: "Filings (99% Accuracy)",
+        bullets: [
+          "Handled <strong>2,000+ tax filings and 50+ litigation cases</strong>, achieving <strong>99% accuracy</strong> and <strong>90%+ favourable outcomes</strong>.",
+          "Automated legacy systems to cut processing time by <strong>30%</strong>, saving <strong>200+ hours annually</strong>.",
+          "Designed SIP/SWP investment structures for client portfolios exceeding <strong>₹5 Crore in aggregate value</strong>.",
+          "Advised <strong>100+ SMEs</strong> directly with the founder, generating <strong>₹1 Crore+ in cumulative tax savings</strong>."
+        ]
+      },
+      {
+        title: "Scholars, Academics <em>& Athletics</em>",
+        desc: "Reliance Foundation Undergraduate Scholar, Kurukshetra University B.Com, and State-Level Badminton Player.",
+        stat1Val: "Top 5,000", stat1Lbl: "Of 50,000+ (Reliance)",
+        stat2Val: "1st Attempt", stat2Lbl: "CA Foundation Cleared",
+        stat3Val: "Top 10", stat3Lbl: "Haryana State Badminton",
+        bullets: [
+          "<strong>Reliance Foundation Scholar (2023):</strong> Awarded ₹1.5 Lakh scholarship among top 5,000 of 50,000+ applicants nationwide.",
+          "<strong>Kurukshetra University (2022–2025):</strong> B.Com, Finance Club Core Member, cleared <strong>CA Foundation in 1st attempt</strong>, and spoke to <strong>200+ students at IIIT Una</strong>.",
+          "<strong>State-Level Badminton (Haryana):</strong> 3rd place at District Level (U-17), represented city at State Level, ranked top 10 of 30 cities.",
+          "<strong>Mukand Lal Public School:</strong> CBSE Class 12: 86.5% | Class 10: 85.4% | Won 20+ debates & headed 30+ school annual debate."
+        ]
       }
     ];
 
-    let currentSystemIndex = 0;
     window.openSystemDetail = function(idx) {
-      currentSystemIndex = idx;
       const data = detailData[idx] || detailData[0];
-      document.getElementById("detail-title").innerHTML = data.title.replace(" ", " <em>") + "</em>";
+      document.getElementById("detail-title").innerHTML = data.title;
       document.getElementById("detail-desc").textContent = data.desc;
       document.getElementById("stat-1-val").textContent = data.stat1Val;
       document.getElementById("stat-1-lbl").textContent = data.stat1Lbl;
@@ -493,38 +870,35 @@
       document.getElementById("stat-3-val").textContent = data.stat3Val;
       document.getElementById("stat-3-lbl").textContent = data.stat3Lbl;
 
-      const pBtn = document.getElementById("detail-primary-btn");
-      pBtn.href = data.link;
-      pBtn.innerHTML = `<span>${data.btnText}</span> →`;
+      const listEl = document.getElementById("detail-bullets");
+      listEl.innerHTML = data.bullets.map(b => `<li>${b}</li>`).join("");
 
       openBox("detail");
     };
 
     window.openActiveSystemDetail = function() {
-      openSystemDetail(currentSystemIndex);
+      const idx = window.currentActiveMilestoneIndex || 0;
+      openSystemDetail(idx);
     };
 
-    // Form submit handler
     window.handleFormSubmit = function(e) {
       e.preventDefault();
       const name = document.getElementById("c-name").value;
       const email = document.getElementById("c-email").value;
       const msg = document.getElementById("c-msg").value;
       const needs = Array.from(document.querySelectorAll("input[name='need']:checked")).map(el => el.value).join(", ");
-      const budget = (document.querySelector("input[name='budget']:checked") || {}).value || "Not specified";
 
-      const subject = encodeURIComponent(`Project Brief from ${name} [${budget}]`);
-      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nNeeds: ${needs}\nBudget: ${budget}\n\nProject Details:\n${msg}`);
+      const subject = encodeURIComponent(`Opportunity / Note from ${name} [${needs}]`);
+      const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\nTopic: ${needs}\n\nMessage:\n${msg}`);
 
-      window.location.href = `mailto:thefinancialnerds@gmail.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:ylc27lakshay.papneja@mastersunion.org?subject=${subject}&body=${body}`;
     };
 
-    // Loader removal after initial entrance
     window.addEventListener("load", () => {
       setTimeout(() => {
         const loader = document.getElementById("loader");
         if (loader) loader.classList.add("done");
-      }, 900);
+      }, 850);
     });
   </script>
 </body>

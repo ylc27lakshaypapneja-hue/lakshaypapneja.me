@@ -1,5 +1,5 @@
-// Cosmos 3D Engine for Lakshay Papneja Portfolio
-// Spatial data cosmos, interactive 3D system planes, scroll fly-through, and raycasting
+// Cosmos 3D Engine for Lakshay Papneja Interactive Portfolio
+// 8 Real Career, Venture, Education & Achievement Milestones in 3D Space
 
 (function() {
   const canvas = document.getElementById("c");
@@ -7,12 +7,11 @@
 
   const THREE = window.THREE;
 
-  // Scene setup
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0a0a0b, 0.0018);
+  scene.fog = new THREE.FogExp2(0x0a0a0b, 0.0014);
 
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2000);
-  camera.position.set(0, 0, 400);
+  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2400);
+  camera.position.set(0, 0, 420);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -23,155 +22,206 @@
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // Systems data
-  const systems = [
+  // 8 Core Milestones from Lakshay Papneja's Resume
+  const milestones = [
     {
-      id: "scrapers-tech",
-      name: "Scrapers.tech",
-      category: "Production Intelligence Hub",
-      stat: "24 Actors Live",
-      desc: "Central catalog and live execution engine serving autonomous agents.",
-      color: "#5e6ad2",
-      z: 220
+      id: "thirdbase-vc",
+      name: "ThirdBase Capital",
+      category: "NYC Venture Capital • Feb '26 – Present",
+      stat: "$500K LP Sourced",
+      subStat: "3,000+ VP Database • 2 Co-Investments",
+      desc: "Sourced a $500K LP investor & advisor. Built a 50+ US senior technologist network & 3,000+ VP engineering database.",
+      color: "#34d399",
+      z: 240
     },
     {
-      id: "apify-actors",
-      name: "Apify Cloud Fleet",
-      category: "Monetized Cloud Actors",
-      stat: "10/10 Quality Score",
-      desc: "Containerized distributed scrapers monetized under Pay-Per-Event.",
-      color: "#27c93f",
-      z: 70
+      id: "aviva-ceo",
+      name: "Aviva India — CEO's Office",
+      category: "Strategy & Partnerships • Gurugram",
+      stat: "15+ B2B Partnerships",
+      subStat: "Fitelo (₹100Cr+) • Conversion 1% → 2%",
+      desc: "Led end-to-end partnership with Fitelo (₹100Cr+ rev) & 15+ B2B alliances. Doubled funnel conversion from 1% to 2%.",
+      color: "#60a5fa",
+      z: 90
     },
     {
-      id: "mcp-protocol",
-      name: "Model Context Protocol",
-      category: "Agent Bridge & Tooling",
-      stat: "Native MCP",
-      desc: "Direct JSON-RPC bridge allowing LLMs to query live web data.",
-      color: "#f5a623",
-      z: -80
+      id: "2cents-hedge",
+      name: "2Cents Capital (Dubai)",
+      category: "$25M AUM Hedge Fund • Research Analyst (PPO)",
+      stat: "40+ Derivatives Alpha",
+      subStat: "0-to-1 Growth • 30% Faster GTM",
+      desc: "First intern cohort in 0-to-1 phase. Onboarded 3+ custodians & 5+ brokers across India, Dubai & GIFT City.",
+      color: "#f59e0b",
+      z: -60
     },
     {
-      id: "stealth-mesh",
-      name: "Headless Scraper Mesh",
-      category: "Distributed Runtime",
-      stat: "99.9% Uptime",
-      desc: "Fingerprint rotation and DOM extraction pipeline across clouds.",
-      color: "#00c4cc",
-      z: -230
+      id: "masters-union",
+      name: "Masters' Union",
+      category: "PGP Tech & Business Management • 2025 – Present",
+      stat: "Top 5% Merit Scholar",
+      subStat: "Investment Fund (13 / 330+)",
+      desc: "Selected 1 of 13 members in the student-run Investment Fund. Awarded 25% Merit Scholarship (top 5% of 330+ cohort).",
+      color: "#a78bfa",
+      z: -210
     },
     {
-      id: "sentiment-miner",
-      name: "Sentiment & Aspect Miner",
-      category: "NLP Intelligence Engine",
-      stat: "Multi-Language",
-      desc: "Real-time emotion and aspect miner for product & brand reviews.",
-      color: "#bd10e0",
-      z: -380
+      id: "josh-talks",
+      name: "Josh Talks Speaker",
+      category: "10M+ Subscriber Platform • Featured Speaker",
+      stat: "2M+ Views",
+      subStat: "5M+ Impressions Across Platforms",
+      desc: "Invited to speak on equity markets, investing psychology, and early career learnings, reaching 2M+ viewers.",
+      color: "#f43f5e",
+      z: -360
     },
     {
-      id: "commerce-tracker",
-      name: "Ecommerce Price Tracker",
-      category: "Commerce Intelligence",
-      stat: "Sub-Second Delta",
-      desc: "Universal product variant and stock tracker across top retailers.",
-      color: "#4a90e2",
-      z: -530
+      id: "pegster-ventures",
+      name: "Pegster & Scrapers.tech",
+      category: "Founder & Builder • E-Commerce & AI Data",
+      stat: "₹4,00,000+ in 2 Mo",
+      subStat: "24 Cloud Scrapers • 500K+ Content Views",
+      desc: "Scaled Pegster to ₹4L+ sales in 2 months. Built Scrapers.tech with 24 public monetized Apify actors & 500K+ YouTube/Reels views.",
+      color: "#2dd4bf",
+      z: -510
+    },
+    {
+      id: "papneja-associates",
+      name: "Papneja Associates",
+      category: "Tax & Financial Advisory • 2020 – 2024",
+      stat: "₹1 Cr+ Tax Saved",
+      subStat: "₹5 Cr+ Portfolios • 2,000+ Filings",
+      desc: "Advised 100+ SMEs, structured ₹5Cr+ SIP/SWP portfolios, handled 2,000+ tax filings (99% accuracy) & automated workflows by 30%.",
+      color: "#eab308",
+      z: -660
+    },
+    {
+      id: "scholars-honours",
+      name: "Reliance Scholar & Honours",
+      category: "National Scholarships & Athletics",
+      stat: "Top 5,000 / 50,000+",
+      subStat: "CA Foundation 1st Attempt • State Badminton",
+      desc: "Reliance Foundation Undergraduate Scholar (₹1.5L), cleared CA Foundation 1st attempt, IIIT Una speaker & Haryana State Badminton.",
+      color: "#38bdf8",
+      z: -810
     }
   ];
 
-  // Helper to draw high-res 2D canvas texture for 3D card
+  window.PORTFOLIO_MILESTONES = milestones;
+
+  function roundRectPolyfill(ctx, x, y, w, h, r) {
+    if (ctx.roundRect) {
+      ctx.beginPath();
+      ctx.roundRect(x, y, w, h, r);
+    } else {
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+  }
+
   function createCardTexture(item, index) {
     const c = document.createElement("canvas");
-    c.width = 512;
-    c.height = 300;
+    c.width = 640;
+    c.height = 380;
     const ctx = c.getContext("2d");
 
-    // Background
-    ctx.fillStyle = "#121316";
-    ctx.roundRect(0, 0, 512, 300, 24);
+    // Card dark background
+    ctx.fillStyle = "#111216";
+    roundRectPolyfill(ctx, 0, 0, 640, 380, 28);
     ctx.fill();
 
-    // Subtle gradient glow
-    const grad = ctx.createLinearGradient(0, 0, 512, 300);
-    grad.addColorStop(0, "rgba(255, 255, 255, 0.08)");
-    grad.addColorStop(1, "rgba(255, 255, 255, 0.01)");
+    // Subtle top-left radial glow with item accent color
+    const grad = ctx.createRadialGradient(80, 40, 10, 220, 180, 480);
+    grad.addColorStop(0, item.color + "24");
+    grad.addColorStop(0.5, "rgba(255, 255, 255, 0.03)");
+    grad.addColorStop(1, "rgba(0, 0, 0, 0)");
     ctx.fillStyle = grad;
-    ctx.roundRect(0, 0, 512, 300, 24);
+    roundRectPolyfill(ctx, 0, 0, 640, 380, 28);
     ctx.fill();
 
-    // Border
-    ctx.lineWidth = 4;
+    // Outer border
+    ctx.lineWidth = 3;
     ctx.strokeStyle = "rgba(255, 255, 255, 0.16)";
-    ctx.roundRect(2, 2, 508, 296, 24);
+    roundRectPolyfill(ctx, 2, 2, 636, 376, 26);
     ctx.stroke();
 
-    // Tag / Category
+    // Index & Category header
     ctx.fillStyle = item.color;
-    ctx.font = "bold 20px -apple-system, BlinkMacSystemFont, sans-serif";
-    ctx.fillText(`0${index + 1} — ${item.category.toUpperCase()}`, 36, 56);
+    ctx.font = "600 18px -apple-system, BlinkMacSystemFont, 'Inter Tight', sans-serif";
+    ctx.fillText(`0${index + 1}  •  ${item.category.toUpperCase()}`, 42, 58);
 
     // Title
     ctx.fillStyle = "#ffffff";
-    ctx.font = "italic 44px 'Instrument Serif', Georgia, serif";
-    ctx.fillText(item.name, 36, 118);
+    ctx.font = "italic 48px 'Instrument Serif', Georgia, serif";
+    ctx.fillText(item.name, 42, 122);
 
-    // Description
-    ctx.fillStyle = "rgba(242, 242, 242, 0.72)";
-    ctx.font = "22px -apple-system, BlinkMacSystemFont, sans-serif";
+    // Description wrapped
+    ctx.fillStyle = "rgba(242, 242, 242, 0.76)";
+    ctx.font = "22px -apple-system, BlinkMacSystemFont, 'Inter Tight', sans-serif";
     const words = item.desc.split(" ");
     let line = "";
-    let y = 175;
-    for (let w of words) {
+    let y = 176;
+    for (const w of words) {
       const test = line + w + " ";
-      if (ctx.measureText(test).width > 440) {
-        ctx.fillText(line, 36, y);
+      if (ctx.measureText(test).width > 556) {
+        ctx.fillText(line, 42, y);
         line = w + " ";
         y += 32;
       } else {
         line = test;
       }
     }
-    ctx.fillText(line, 36, y);
+    ctx.fillText(line, 42, y);
 
-    // Metric badge at bottom
-    ctx.fillStyle = "rgba(255, 255, 255, 0.06)";
-    ctx.roundRect(36, 230, 200, 42, 21);
+    // Divider line
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.09)";
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(42, 282);
+    ctx.lineTo(598, 282);
+    ctx.stroke();
+
+    // Primary Metric Pill
+    ctx.fillStyle = "rgba(255, 255, 255, 0.07)";
+    roundRectPolyfill(ctx, 42, 304, 240, 46, 23);
     ctx.fill();
-    ctx.lineWidth = 1;
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.2)";
-    ctx.roundRect(36, 230, 200, 42, 21);
+    ctx.lineWidth = 1.2;
+    ctx.strokeStyle = item.color + "66";
+    roundRectPolyfill(ctx, 42, 304, 240, 46, 23);
     ctx.stroke();
 
     ctx.fillStyle = "#ffffff";
-    ctx.font = "17px ui-monospace, Menlo, monospace";
-    ctx.fillText(item.stat, 54, 257);
+    ctx.font = "600 19px ui-monospace, SFMono-Regular, Menlo, monospace";
+    ctx.fillText(item.stat, 62, 333);
 
-    // Action indicator
-    ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
-    ctx.font = "18px -apple-system, BlinkMacSystemFont, sans-serif";
-    ctx.fillText("Click to inspect →", 330, 257);
+    // Inspect callout
+    ctx.fillStyle = "rgba(242, 242, 242, 0.55)";
+    ctx.font = "19px -apple-system, BlinkMacSystemFont, sans-serif";
+    ctx.fillText("Inspect dossier →", 448, 333);
 
     const texture = new THREE.CanvasTexture(c);
     texture.minFilter = THREE.LinearFilter;
     return texture;
   }
 
-  // 1. Particle Cloud (Star/Data field)
-  const particleCount = 1400;
+  // 1. Star & Data Particle Field
+  const particleCount = 1600;
   const geom = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
 
   for (let i = 0; i < particleCount; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const radius = 60 + Math.random() * 380;
+    const radius = 65 + Math.random() * 420;
     positions[i * 3] = Math.cos(angle) * radius;
     positions[i * 3 + 1] = Math.sin(angle) * radius;
-    positions[i * 3 + 2] = 500 - Math.random() * 1400;
+    positions[i * 3 + 2] = 520 - Math.random() * 1650;
 
-    const shade = 0.4 + Math.random() * 0.6;
+    const shade = 0.35 + Math.random() * 0.65;
     colors[i * 3] = shade;
     colors[i * 3 + 1] = shade;
     colors[i * 3 + 2] = shade;
@@ -181,25 +231,23 @@
   geom.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
   const pMaterial = new THREE.PointsMaterial({
-    size: 2.2,
+    size: 2.1,
     vertexColors: true,
     transparent: true,
-    opacity: 0.75
+    opacity: 0.72
   });
 
   const particleSystem = new THREE.Points(geom, pMaterial);
   scene.add(particleSystem);
 
-  // 2. Interactive System Cards in 3D
+  // 2. Interactive 3D Milestone Planes
   const cardGroup = new THREE.Group();
   scene.add(cardGroup);
 
   const cardMeshes = [];
-  const cardWidth = 72;
-  const cardHeight = 42;
-  const cardGeometry = new THREE.PlaneGeometry(cardWidth, cardHeight);
+  const cardGeometry = new THREE.PlaneGeometry(78, 46);
 
-  systems.forEach((item, i) => {
+  milestones.forEach((item, i) => {
     const texture = createCardTexture(item, i);
     const material = new THREE.MeshBasicMaterial({
       map: texture,
@@ -209,9 +257,8 @@
     });
 
     const mesh = new THREE.Mesh(cardGeometry, material);
-    // Alternate left / right lanes like Vadim Carazan's middle stream
-    const side = (i % 2 === 0 ? 1 : -1);
-    mesh.position.set(side * (45 + (i % 3) * 15), ((i % 3) - 1) * 22, item.z);
+    const side = i % 2 === 0 ? 1 : -1;
+    mesh.position.set(side * (42 + (i % 3) * 14), ((i % 3) - 1) * 20, item.z);
     mesh.rotation.y = -side * 0.12;
     mesh.userData = { index: i, item };
 
@@ -219,11 +266,11 @@
     cardMeshes.push(mesh);
   });
 
-  // Connecting constellation lines between adjacent systems
+  // Subtle constellation thread connecting milestones
   const lineMat = new THREE.LineBasicMaterial({
     color: 0xffffff,
     transparent: true,
-    opacity: 0.12
+    opacity: 0.11
   });
   const lineGeo = new THREE.BufferGeometry();
   const linePoints = [];
@@ -232,27 +279,25 @@
   const lines = new THREE.Line(lineGeo, lineMat);
   scene.add(lines);
 
-  // Flight & Parallax State
-  let targetCamZ = 400;
-  let currentCamZ = 400;
+  // Camera & Mouse State
+  let targetCamZ = 420;
+  let currentCamZ = 420;
   let targetMouseX = 0;
   let targetMouseY = 0;
   let currentMouseX = 0;
   let currentMouseY = 0;
 
-  // Raycaster for Hover & Click
   const raycaster = new THREE.Raycaster();
   const mouseVec = new THREE.Vector2(-999, -999);
   let hoveredMesh = null;
   const hud = document.getElementById("hud");
   const hudText = document.getElementById("hud-text");
 
-  // Mouse move listener
   window.addEventListener("pointermove", (e) => {
     const nx = (e.clientX / window.innerWidth) * 2 - 1;
     const ny = -(e.clientY / window.innerHeight) * 2 + 1;
-    targetMouseX = nx * 35;
-    targetMouseY = ny * 25;
+    targetMouseX = nx * 34;
+    targetMouseY = ny * 22;
 
     mouseVec.x = nx;
     mouseVec.y = ny;
@@ -263,23 +308,18 @@
     }
   });
 
-  // Wheel listener for scroll fly-through
   window.addEventListener("wheel", (e) => {
-    // If a drawer is open, don't fly the camera
     if (document.body.classList.contains("boxed")) return;
+    targetCamZ -= e.deltaY * 0.48;
+    targetCamZ = Math.max(-720, Math.min(460, targetCamZ));
 
-    targetCamZ -= e.deltaY * 0.45;
-    // Bound camera Z between 480 and -550
-    targetCamZ = Math.max(-550, Math.min(480, targetCamZ));
-
-    if (targetCamZ < 350) {
+    if (targetCamZ < 360) {
       document.body.classList.add("flying");
     } else {
       document.body.classList.remove("flying");
     }
   }, { passive: true });
 
-  // Touch gesture support for mobile
   let touchStartY = 0;
   window.addEventListener("touchstart", (e) => {
     if (e.touches.length > 0) touchStartY = e.touches[0].clientY;
@@ -290,34 +330,41 @@
     if (e.touches.length > 0) {
       const delta = touchStartY - e.touches[0].clientY;
       touchStartY = e.touches[0].clientY;
-      targetCamZ -= delta * 0.8;
-      targetCamZ = Math.max(-550, Math.min(480, targetCamZ));
-      if (targetCamZ < 350) document.body.classList.add("flying");
+      targetCamZ -= delta * 0.85;
+      targetCamZ = Math.max(-720, Math.min(460, targetCamZ));
+      if (targetCamZ < 360) document.body.classList.add("flying");
       else document.body.classList.remove("flying");
     }
   }, { passive: true });
 
-  // Canvas click listener
   canvas.addEventListener("click", () => {
     if (hoveredMesh && window.openSystemDetail) {
       window.openSystemDetail(hoveredMesh.userData.index);
     }
   });
 
-  // Controls for flybar
   window.flyToPrev = function() {
-    targetCamZ = Math.min(480, targetCamZ + 150);
+    targetCamZ = Math.min(460, targetCamZ + 150);
+    if (targetCamZ >= 360) document.body.classList.remove("flying");
   };
+
   window.flyToNext = function() {
-    targetCamZ = Math.max(-550, targetCamZ - 150);
-    document.body.classList.add("flying");
-  };
-  window.flyToStart = function() {
-    targetCamZ = 180;
+    targetCamZ = Math.max(-720, targetCamZ - 150);
     document.body.classList.add("flying");
   };
 
-  // Resize handler
+  window.flyToStart = function() {
+    targetCamZ = 240;
+    document.body.classList.add("flying");
+  };
+
+  window.flyToMilestone = function(idx) {
+    if (milestones[idx]) {
+      targetCamZ = milestones[idx].z + 170;
+      document.body.classList.add("flying");
+    }
+  };
+
   window.addEventListener("resize", () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
@@ -325,7 +372,29 @@
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   });
 
-  // Animation Loop
+  const flybarNum = document.getElementById("now-num");
+  const flybarTitle = document.getElementById("now-title");
+  const flybarSub = document.getElementById("now-sub");
+
+  function updateFlybar(camZ) {
+    if (!flybarNum || !flybarTitle) return;
+    let bestIdx = 0;
+    let minDiff = 99999;
+    milestones.forEach((m, idx) => {
+      const diff = Math.abs(m.z - (camZ - 170));
+      if (diff < minDiff) {
+        minDiff = diff;
+        bestIdx = idx;
+      }
+    });
+
+    window.currentActiveMilestoneIndex = bestIdx;
+    const active = milestones[bestIdx];
+    flybarNum.textContent = `0${bestIdx + 1}`;
+    flybarTitle.textContent = active.name;
+    flybarSub.textContent = `${active.category}  •  ${active.stat}`;
+  }
+
   let lastTime = performance.now();
   function animate(now) {
     requestAnimationFrame(animate);
@@ -333,7 +402,6 @@
     const dt = Math.min(0.1, (now - lastTime) / 1000);
     lastTime = now;
 
-    // Smooth lerp camera
     currentCamZ += (targetCamZ - currentCamZ) * 0.08;
     currentMouseX += (targetMouseX - currentMouseX) * 0.06;
     currentMouseY += (targetMouseY - currentMouseY) * 0.06;
@@ -341,17 +409,14 @@
     camera.position.z = currentCamZ;
     camera.position.x = currentMouseX;
     camera.position.y = currentMouseY;
-    camera.lookAt(currentMouseX * 0.3, currentMouseY * 0.3, currentCamZ - 300);
+    camera.lookAt(currentMouseX * 0.28, currentMouseY * 0.28, currentCamZ - 300);
 
-    // Slowly rotate background particle constellation
-    particleSystem.rotation.z += dt * 0.015;
+    particleSystem.rotation.z += dt * 0.012;
 
-    // Subtle breathing float for cards
     cardMeshes.forEach((mesh, idx) => {
-      mesh.position.y += Math.sin(now * 0.0015 + idx) * 0.03;
+      mesh.position.y += Math.sin(now * 0.0014 + idx) * 0.028;
     });
 
-    // Raycast hover test
     raycaster.setFromCamera(mouseVec, camera);
     const intersects = raycaster.intersectObjects(cardMeshes);
 
@@ -363,7 +428,7 @@
         hoveredMesh.scale.set(1.05, 1.05, 1.05);
         canvas.classList.add("clickable");
         if (hud && hudText) {
-          hudText.textContent = `${hoveredMesh.userData.item.name} • Click to inspect`;
+          hudText.textContent = `${hoveredMesh.userData.item.name} (${hoveredMesh.userData.item.stat}) • Click to open`;
           hud.classList.add("show");
         }
       }
@@ -376,43 +441,9 @@
       }
     }
 
-    // Update Flybar HUD with closest system in front of camera
     updateFlybar(currentCamZ);
-
     renderer.render(scene, camera);
   }
-
-  // Update Flybar text
-  const flybarNum = document.getElementById("now-num");
-  const flybarTitle = document.getElementById("now-title");
-  const flybarSub = document.getElementById("now-sub");
-
-  function updateFlybar(camZ) {
-    if (!flybarNum || !flybarTitle) return;
-    // Find system whose Z is closest to camera position - 150
-    let bestIdx = 0;
-    let minDiff = 99999;
-    systems.forEach((s, idx) => {
-      const diff = Math.abs(s.z - (camZ - 180));
-      if (diff < minDiff) {
-        minDiff = diff;
-        bestIdx = idx;
-      }
-    });
-
-    const active = systems[bestIdx];
-    flybarNum.textContent = `0${bestIdx + 1}`;
-    flybarTitle.textContent = active.name;
-    flybarSub.textContent = `${active.category} • ${active.stat}`;
-  }
-
-  // Expose global flight trigger
-  window.flyToSystem = function(idx) {
-    if (systems[idx]) {
-      targetCamZ = systems[idx].z + 180;
-      document.body.classList.add("flying");
-    }
-  };
 
   requestAnimationFrame(animate);
 })();

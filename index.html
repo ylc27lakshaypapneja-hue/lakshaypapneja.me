@@ -61,76 +61,66 @@
   <!-- 3D WebGL Canvas -->
   <canvas id="c"></canvas>
 
-  <!-- Top Bar -->
+  <!-- Minimalist Top Bar -->
   <header class="topbar">
-    <a href="#" class="logo-btn" onclick="closeBox(); window.flyToPrev && window.flyToPrev(); return false;" aria-label="Lakshay Papneja Home">
-      <div class="monogram">LP</div>
-    </a>
+    <div class="top-left">
+      <a href="#" class="logo-btn" onclick="closeBox(); window.flyToTop && window.flyToTop(); return false;" aria-label="Lakshay Papneja Home">
+        <div class="monogram">LP</div>
+      </a>
 
-    <div class="col col-place col-go" onclick="openBox('education')">
-      <span class="k">Base & Education</span>
-      <span class="v">Masters' Union, Gurugram &nbsp;•&nbsp; <time id="live-time">--:--:-- IST</time></span>
+      <button type="button" class="status-pill" onclick="openBox('resume')">
+        <span class="status-dot"></span>
+        <span>Masters' Union</span>
+        <span class="sep hide-tablet">•</span>
+        <span class="hide-tablet">Open to VC &amp; Strategy</span>
+        <span class="sep hide-tablet">•</span>
+        <time class="hide-tablet" id="live-time">--:-- IST</time>
+      </button>
     </div>
 
-    <div class="col col-place col-go" onclick="openBox('experience')">
-      <span class="k">Focus</span>
-      <span class="v">Venture Capital, CEO's Office & Growth</span>
-    </div>
-
-    <div class="col col-go" onclick="openBox('resume')">
-      <span class="k">Status</span>
-      <span class="v"><span class="status-dot"></span> Open to Roles & Ventures</span>
-    </div>
-
-    <nav class="nav-links">
+    <nav class="nav-links" aria-label="Portfolio navigation">
       <button type="button" class="nav-item" onclick="openBox('experience')">Experience</button>
-      <button type="button" class="nav-item" onclick="openBox('ventures')">Ventures</button>
-      <button type="button" class="nav-item" onclick="openBox('education')">Education & Honours</button>
-      <button type="button" class="nav-item" onclick="openBox('resume')">Full Resume</button>
+      <button type="button" class="nav-item hide-tablet" onclick="openBox('ventures')">Ventures</button>
+      <button type="button" class="nav-item hide-tablet" onclick="openBox('education')">Honours</button>
+      <button type="button" class="nav-item" onclick="openBox('resume')">Resume</button>
       <button type="button" class="nav-item nav-btn-highlight" onclick="openBox('contact')">Connect</button>
     </nav>
   </header>
 
-  <!-- Bottom Hero -->
+  <!-- Decluttered Bottom Hero (fades out cleanly on scroll) -->
   <div class="hero" id="hero">
-    <!-- Interactive Impact Metric Pills (Click to fly & inspect) -->
+    <!-- 4 High-Signal Metric Pills (swipeable single row on mobile) -->
     <div class="impact-strip">
       <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(0); openSystemDetail(0);">
-        <strong>$500K LP</strong> Sourced at ThirdBase NYC
+        <strong>$500K LP</strong> ThirdBase NYC
       </button>
       <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(1); openSystemDetail(1);">
         <strong>15+ B2B Deals</strong> Aviva CEO's Office
       </button>
       <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(2); openSystemDetail(2);">
-        <strong>$25M Hedge Fund</strong> 2Cents Dubai (PPO)
+        <strong>$25M Fund</strong> 2Cents Dubai (PPO)
       </button>
       <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(3); openSystemDetail(3);">
-        <strong>Top 5% Scholar</strong> Masters' Union Fund (13/330+)
-      </button>
-      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(4); openSystemDetail(4);">
-        <strong>2M+ Views</strong> Josh Talks Speaker
-      </button>
-      <button type="button" class="impact-pill" onclick="window.flyToMilestone && window.flyToMilestone(5); openSystemDetail(5);">
-        <strong>₹4L+ in 2 Mo</strong> Pegster & Scrapers.tech
+        <strong>Top 5%</strong> Masters' Union Fund
       </button>
     </div>
 
     <div class="hero-row">
       <p class="lead">
-        PGP in Technology & Business Management at <strong>Masters' Union</strong> (Investment Fund 13/330+, Top 5% Merit Scholar). Operating across Venture Capital, CEO's Office Strategy, Hedge Fund Alpha, and High-Velocity Ventures.
+        PGP at <strong>Masters' Union</strong> (Investment Fund 13/330+, Top 5% Scholar). Operating across Venture Capital, CEO's Office Strategy, Hedge Fund Alpha, and 0-to-1 Ventures.
       </p>
 
       <div class="hero-actions">
         <button type="button" class="start-btn" onclick="window.flyToStart && window.flyToStart();">
-          <span>Fly through milestones</span>
+          <span>Scroll to explore</span>
           <i>
-            <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
               <path d="M8 3v10M3 8l5 5 5-5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </i>
         </button>
         <button type="button" class="dossier-btn" onclick="openBox('resume')">
-          <span>Interactive Resume</span> →
+          <span>Dossier</span> →
         </button>
       </div>
     </div>
@@ -140,21 +130,24 @@
 
   <!-- Flight HUD Footer -->
   <div class="flybar" id="flybar">
-    <div class="now-reading">
+    <div class="now-reading" onclick="openActiveSystemDetail()" title="Click to inspect milestone dossier">
+      <div class="fly-progress">
+        <div class="fly-progress-fill" id="fly-progress-fill"></div>
+      </div>
       <div class="now-num" id="now-num">01</div>
       <div class="now-txt">
-        <div class="now-title" id="now-title" onclick="openActiveSystemDetail()">ThirdBase Capital</div>
+        <div class="now-title" id="now-title">ThirdBase Capital</div>
         <div class="now-sub" id="now-sub">NYC Venture Capital  •  $500K LP Sourced</div>
       </div>
     </div>
 
     <div class="fly-controls">
-      <button type="button" class="ctrl-btn" onclick="window.flyToPrev && window.flyToPrev();" aria-label="Previous milestone" title="Fly Back">
+      <button type="button" class="ctrl-btn" onclick="window.flyToPrev && window.flyToPrev();" aria-label="Previous milestone" title="Previous Milestone">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M10 3 5 8l5 5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button type="button" class="ctrl-btn" onclick="window.flyToNext && window.flyToNext();" aria-label="Next milestone" title="Fly Forward">
+      <button type="button" class="ctrl-btn" onclick="window.flyToNext && window.flyToNext();" aria-label="Next milestone" title="Next Milestone">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8">
           <path d="M6 3l5 5-5 5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
@@ -164,6 +157,34 @@
           <path d="M3 4h10M3 8h10M3 12h10" stroke-linecap="round"/>
         </svg>
       </button>
+    </div>
+  </div>
+
+  <!-- End-of-Scroll Finale Overlay ("The End Song") -->
+  <div class="outro-overlay" id="outro-overlay" aria-live="polite">
+    <div class="outro-card">
+      <div class="outro-badge">
+        <span class="eq-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+        <span>Outro  •  Track 08 of 08</span>
+      </div>
+
+      <h2 class="outro-title">That was the <em>end song.</em></h2>
+
+      <p class="outro-punchline">
+        You’ve scrolled to the edge of the cosmos. Either you’re convinced, or your scroll wheel is broken — <strong>no post-credits scene, unless we write the next verse together.</strong>
+      </p>
+
+      <div class="outro-actions">
+        <button type="button" class="primary-btn" onclick="openBox('contact')">
+          <span>Let's Connect</span> →
+        </button>
+        <button type="button" class="secondary-btn" onclick="openBox('resume')">
+          Full Resume Dossier
+        </button>
+        <button type="button" class="secondary-btn" onclick="window.flyToTop && window.flyToTop()">
+          ↺ Replay from Top
+        </button>
+      </div>
     </div>
   </div>
 
@@ -717,11 +738,23 @@
       const el = document.getElementById("live-time");
       if (!el) return;
       const now = new Date();
-      const options = { timeZone: "Asia/Kolkata", hour12: false, hour: "2-digit", minute: "2-digit", second: "2-digit" };
+      const options = { timeZone: "Asia/Kolkata", hour12: false, hour: "2-digit", minute: "2-digit" };
       el.textContent = now.toLocaleTimeString("en-GB", options) + " IST";
     }
-    setInterval(updateLiveTime, 1000);
+    setInterval(updateLiveTime, 10000);
     updateLiveTime();
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        window.closeBox && window.closeBox();
+      } else if (!document.body.classList.contains("boxed")) {
+        if (e.key === "ArrowDown" || e.key === "ArrowRight") {
+          window.flyToNext && window.flyToNext();
+        } else if (e.key === "ArrowUp" || e.key === "ArrowLeft") {
+          window.flyToPrev && window.flyToPrev();
+        }
+      }
+    });
 
     const box = document.getElementById("box");
     const views = {

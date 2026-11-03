@@ -1,5 +1,5 @@
 // Cosmos 3D Engine for Lakshay Papneja Interactive Portfolio
-// 8 Real Career, Venture, Education & Achievement Milestones in 3D Space
+// Decluttered spatial layout, responsive mobile framing, distance-fade, and End-of-Scroll Finale
 
 (function() {
   const canvas = document.getElementById("c");
@@ -8,10 +8,20 @@
   const THREE = window.THREE;
 
   const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0a0a0b, 0.0014);
+  scene.fog = new THREE.FogExp2(0x0a0a0b, 0.0018);
 
-  const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 2400);
-  camera.position.set(0, 0, 420);
+  const isMobileView = () => window.innerWidth < 768;
+
+  const camera = new THREE.PerspectiveCamera(
+    isMobileView() ? 58 : 45,
+    window.innerWidth / window.innerHeight,
+    1,
+    2600
+  );
+
+  const START_Z = 460;
+  const END_Z = -1680;
+  camera.position.set(0, 0, START_Z);
 
   const renderer = new THREE.WebGLRenderer({
     canvas,
@@ -22,87 +32,79 @@
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  // 8 Core Milestones from Lakshay Papneja's Resume
+  // 8 Core Milestones spaced cleanly (240 units apart in Z to prevent overlap)
   const milestones = [
     {
       id: "thirdbase-vc",
       name: "ThirdBase Capital",
-      category: "NYC Venture Capital • Feb '26 – Present",
+      category: "NYC Venture Capital  •  2026",
       stat: "$500K LP Sourced",
-      subStat: "3,000+ VP Database • 2 Co-Investments",
-      desc: "Sourced a $500K LP investor & advisor. Built a 50+ US senior technologist network & 3,000+ VP engineering database.",
+      desc: "Sourced a $500K LP investor & advisor. Built a 3,000+ VP engineering database & 50+ US technologist network enabling 2 co-investments.",
       color: "#34d399",
-      z: 240
+      z: 160
     },
     {
       id: "aviva-ceo",
       name: "Aviva India — CEO's Office",
-      category: "Strategy & Partnerships • Gurugram",
-      stat: "15+ B2B Partnerships",
-      subStat: "Fitelo (₹100Cr+) • Conversion 1% → 2%",
-      desc: "Led end-to-end partnership with Fitelo (₹100Cr+ rev) & 15+ B2B alliances. Doubled funnel conversion from 1% to 2%.",
+      category: "Strategy & Partnerships  •  Gurugram",
+      stat: "15+ B2B Deals",
+      desc: "Initiated 15+ B2B alliances across insurtech & healthtech. Led Fitelo (₹100Cr+ rev) deal end-to-end & doubled funnel conversion (1% → 2%).",
       color: "#60a5fa",
-      z: 90
+      z: -80
     },
     {
       id: "2cents-hedge",
       name: "2Cents Capital (Dubai)",
-      category: "$25M AUM Hedge Fund • Research Analyst (PPO)",
+      category: "$25M Hedge Fund  •  Awarded PPO",
       stat: "40+ Derivatives Alpha",
-      subStat: "0-to-1 Growth • 30% Faster GTM",
-      desc: "First intern cohort in 0-to-1 phase. Onboarded 3+ custodians & 5+ brokers across India, Dubai & GIFT City.",
+      desc: "First intern cohort in 0-to-1 growth phase. Onboarded 3+ custodians & 5+ brokers across India, Dubai & GIFT City; cut launch time 30%.",
       color: "#f59e0b",
-      z: -60
+      z: -320
     },
     {
       id: "masters-union",
       name: "Masters' Union",
-      category: "PGP Tech & Business Management • 2025 – Present",
+      category: "PGP Tech & Business Management",
       stat: "Top 5% Merit Scholar",
-      subStat: "Investment Fund (13 / 330+)",
-      desc: "Selected 1 of 13 members in the student-run Investment Fund. Awarded 25% Merit Scholarship (top 5% of 330+ cohort).",
+      desc: "Selected 1 of 13 members in the Masters' Union Investment Fund (out of 330+). Awarded 25% Merit Scholarship.",
       color: "#a78bfa",
-      z: -210
+      z: -560
     },
     {
       id: "josh-talks",
       name: "Josh Talks Speaker",
-      category: "10M+ Subscriber Platform • Featured Speaker",
+      category: "10M+ Subscriber Platform  •  Media",
       stat: "2M+ Views",
-      subStat: "5M+ Impressions Across Platforms",
-      desc: "Invited to speak on equity markets, investing psychology, and early career learnings, reaching 2M+ viewers.",
+      desc: "Invited speaker on equity markets, investing psychology & early career learnings — garnering 2M+ views and 5M+ impressions.",
       color: "#f43f5e",
-      z: -360
+      z: -800
     },
     {
       id: "pegster-ventures",
       name: "Pegster & Scrapers.tech",
-      category: "Founder & Builder • E-Commerce & AI Data",
-      stat: "₹4,00,000+ in 2 Mo",
-      subStat: "24 Cloud Scrapers • 500K+ Content Views",
-      desc: "Scaled Pegster to ₹4L+ sales in 2 months. Built Scrapers.tech with 24 public monetized Apify actors & 500K+ YouTube/Reels views.",
+      category: "0-to-1 Ventures  •  E-Commerce & AI",
+      stat: "₹4L+ Sales in 2 Mo",
+      desc: "Scaled Pegster D2C to ₹4,00,000+ in 2 months. Architected Scrapers.tech (24 live cloud actors) & 500K+ organic finance channel views.",
       color: "#2dd4bf",
-      z: -510
+      z: -1040
     },
     {
       id: "papneja-associates",
       name: "Papneja Associates",
-      category: "Tax & Financial Advisory • 2020 – 2024",
+      category: "Tax & Portfolio Advisory  •  2020–24",
       stat: "₹1 Cr+ Tax Saved",
-      subStat: "₹5 Cr+ Portfolios • 2,000+ Filings",
-      desc: "Advised 100+ SMEs, structured ₹5Cr+ SIP/SWP portfolios, handled 2,000+ tax filings (99% accuracy) & automated workflows by 30%.",
+      desc: "Advised 100+ SMEs, structured ₹5Cr+ SIP/SWP portfolios, and handled 2,000+ filings at 99% accuracy while automating workflows by 30%.",
       color: "#eab308",
-      z: -660
+      z: -1280
     },
     {
       id: "scholars-honours",
       name: "Reliance Scholar & Honours",
-      category: "National Scholarships & Athletics",
+      category: "National Merit & State Athletics",
       stat: "Top 5,000 / 50,000+",
-      subStat: "CA Foundation 1st Attempt • State Badminton",
-      desc: "Reliance Foundation Undergraduate Scholar (₹1.5L), cleared CA Foundation 1st attempt, IIIT Una speaker & Haryana State Badminton.",
+      desc: "Reliance Foundation Scholar (₹1.5L), cleared CA Foundation 1st attempt, IIIT Una guest speaker & Haryana State Badminton (Top 10).",
       color: "#38bdf8",
-      z: -810
+      z: -1520
     }
   ];
 
@@ -125,103 +127,103 @@
 
   function createCardTexture(item, index) {
     const c = document.createElement("canvas");
-    c.width = 640;
-    c.height = 380;
+    c.width = 720;
+    c.height = 420;
     const ctx = c.getContext("2d");
 
-    // Card dark background
-    ctx.fillStyle = "#111216";
-    roundRectPolyfill(ctx, 0, 0, 640, 380, 28);
+    // Deep editorial card background
+    ctx.fillStyle = "#101115";
+    roundRectPolyfill(ctx, 0, 0, 720, 420, 32);
     ctx.fill();
 
-    // Subtle top-left radial glow with item accent color
-    const grad = ctx.createRadialGradient(80, 40, 10, 220, 180, 480);
-    grad.addColorStop(0, item.color + "24");
-    grad.addColorStop(0.5, "rgba(255, 255, 255, 0.03)");
+    // Soft top-left radial glow
+    const grad = ctx.createRadialGradient(90, 45, 10, 260, 200, 520);
+    grad.addColorStop(0, item.color + "28");
+    grad.addColorStop(0.55, "rgba(255, 255, 255, 0.02)");
     grad.addColorStop(1, "rgba(0, 0, 0, 0)");
     ctx.fillStyle = grad;
-    roundRectPolyfill(ctx, 0, 0, 640, 380, 28);
+    roundRectPolyfill(ctx, 0, 0, 720, 420, 32);
     ctx.fill();
 
-    // Outer border
-    ctx.lineWidth = 3;
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.16)";
-    roundRectPolyfill(ctx, 2, 2, 636, 376, 26);
+    // Subtle crisp border
+    ctx.lineWidth = 2.5;
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.14)";
+    roundRectPolyfill(ctx, 2, 2, 716, 416, 30);
     ctx.stroke();
 
-    // Index & Category header
+    // Index & Category eyebrow
     ctx.fillStyle = item.color;
     ctx.font = "600 18px -apple-system, BlinkMacSystemFont, 'Inter Tight', sans-serif";
-    ctx.fillText(`0${index + 1}  •  ${item.category.toUpperCase()}`, 42, 58);
+    ctx.fillText(`0${index + 1}   /   ${item.category.toUpperCase()}`, 48, 66);
 
     // Title
     ctx.fillStyle = "#ffffff";
-    ctx.font = "italic 48px 'Instrument Serif', Georgia, serif";
-    ctx.fillText(item.name, 42, 122);
+    ctx.font = "italic 52px 'Instrument Serif', Georgia, serif";
+    ctx.fillText(item.name, 48, 134);
 
-    // Description wrapped
-    ctx.fillStyle = "rgba(242, 242, 242, 0.76)";
-    ctx.font = "22px -apple-system, BlinkMacSystemFont, 'Inter Tight', sans-serif";
+    // Clean wrapped description (max 3 lines)
+    ctx.fillStyle = "rgba(243, 244, 246, 0.72)";
+    ctx.font = "23px -apple-system, BlinkMacSystemFont, 'Inter Tight', sans-serif";
     const words = item.desc.split(" ");
     let line = "";
-    let y = 176;
+    let y = 192;
     for (const w of words) {
       const test = line + w + " ";
-      if (ctx.measureText(test).width > 556) {
-        ctx.fillText(line, 42, y);
+      if (ctx.measureText(test).width > 624) {
+        ctx.fillText(line, 48, y);
         line = w + " ";
-        y += 32;
+        y += 35;
       } else {
         line = test;
       }
     }
-    ctx.fillText(line, 42, y);
+    ctx.fillText(line, 48, y);
 
-    // Divider line
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.09)";
+    // Subtle divider line
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
     ctx.lineWidth = 1.5;
     ctx.beginPath();
-    ctx.moveTo(42, 282);
-    ctx.lineTo(598, 282);
+    ctx.moveTo(48, 312);
+    ctx.lineTo(672, 312);
     ctx.stroke();
 
-    // Primary Metric Pill
-    ctx.fillStyle = "rgba(255, 255, 255, 0.07)";
-    roundRectPolyfill(ctx, 42, 304, 240, 46, 23);
+    // Metric Badge
+    ctx.fillStyle = "rgba(255, 255, 255, 0.06)";
+    roundRectPolyfill(ctx, 48, 336, 260, 48, 24);
     ctx.fill();
     ctx.lineWidth = 1.2;
     ctx.strokeStyle = item.color + "66";
-    roundRectPolyfill(ctx, 42, 304, 240, 46, 23);
+    roundRectPolyfill(ctx, 48, 336, 260, 48, 24);
     ctx.stroke();
 
     ctx.fillStyle = "#ffffff";
-    ctx.font = "600 19px ui-monospace, SFMono-Regular, Menlo, monospace";
-    ctx.fillText(item.stat, 62, 333);
+    ctx.font = "600 20px ui-monospace, SFMono-Regular, Menlo, monospace";
+    ctx.fillText(item.stat, 70, 367);
 
-    // Inspect callout
-    ctx.fillStyle = "rgba(242, 242, 242, 0.55)";
-    ctx.font = "19px -apple-system, BlinkMacSystemFont, sans-serif";
-    ctx.fillText("Inspect dossier →", 448, 333);
+    // Action hint
+    ctx.fillStyle = "rgba(243, 244, 246, 0.5)";
+    ctx.font = "20px -apple-system, BlinkMacSystemFont, sans-serif";
+    ctx.fillText("Open dossier →", 525, 367);
 
     const texture = new THREE.CanvasTexture(c);
     texture.minFilter = THREE.LinearFilter;
     return texture;
   }
 
-  // 1. Star & Data Particle Field
-  const particleCount = 1600;
+  // 1. Refined Starfield (fewer, cleaner particles so the background feels calm, not noisy)
+  const particleCount = 950;
   const geom = new THREE.BufferGeometry();
   const positions = new Float32Array(particleCount * 3);
   const colors = new Float32Array(particleCount * 3);
 
   for (let i = 0; i < particleCount; i++) {
     const angle = Math.random() * Math.PI * 2;
-    const radius = 65 + Math.random() * 420;
+    const radius = 80 + Math.random() * 440;
     positions[i * 3] = Math.cos(angle) * radius;
     positions[i * 3 + 1] = Math.sin(angle) * radius;
-    positions[i * 3 + 2] = 520 - Math.random() * 1650;
+    positions[i * 3 + 2] = 520 - Math.random() * 2450;
 
-    const shade = 0.35 + Math.random() * 0.65;
+    const shade = 0.28 + Math.random() * 0.55;
     colors[i * 3] = shade;
     colors[i * 3 + 1] = shade;
     colors[i * 3 + 2] = shade;
@@ -231,10 +233,10 @@
   geom.setAttribute("color", new THREE.BufferAttribute(colors, 3));
 
   const pMaterial = new THREE.PointsMaterial({
-    size: 2.1,
+    size: 1.8,
     vertexColors: true,
     transparent: true,
-    opacity: 0.72
+    opacity: 0.58
   });
 
   const particleSystem = new THREE.Points(geom, pMaterial);
@@ -245,22 +247,19 @@
   scene.add(cardGroup);
 
   const cardMeshes = [];
-  const cardGeometry = new THREE.PlaneGeometry(78, 46);
+  const cardGeometry = new THREE.PlaneGeometry(80, 46.6);
 
   milestones.forEach((item, i) => {
     const texture = createCardTexture(item, i);
     const material = new THREE.MeshBasicMaterial({
       map: texture,
       transparent: true,
-      opacity: 0.96,
+      opacity: 0.95,
       side: THREE.DoubleSide
     });
 
     const mesh = new THREE.Mesh(cardGeometry, material);
-    const side = i % 2 === 0 ? 1 : -1;
-    mesh.position.set(side * (42 + (i % 3) * 14), ((i % 3) - 1) * 20, item.z);
-    mesh.rotation.y = -side * 0.12;
-    mesh.userData = { index: i, item };
+    mesh.userData = { index: i, item, baseY: 0 };
 
     cardGroup.add(mesh);
     cardMeshes.push(mesh);
@@ -270,18 +269,47 @@
   const lineMat = new THREE.LineBasicMaterial({
     color: 0xffffff,
     transparent: true,
-    opacity: 0.11
+    opacity: 0.06
   });
   const lineGeo = new THREE.BufferGeometry();
-  const linePoints = [];
-  cardMeshes.forEach(m => linePoints.push(m.position.x, m.position.y, m.position.z));
-  lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(linePoints, 3));
   const lines = new THREE.Line(lineGeo, lineMat);
   scene.add(lines);
 
-  // Camera & Mouse State
-  let targetCamZ = 420;
-  let currentCamZ = 420;
+  function layoutCards() {
+    const mobile = isMobileView();
+    const linePoints = [];
+
+    cardMeshes.forEach((mesh, i) => {
+      const item = mesh.userData.item;
+      const side = i % 2 === 0 ? 1 : -1;
+
+      if (mobile) {
+        // On mobile: center cards horizontally so they never clip off-screen
+        const xOffset = side * 5;
+        const yOffset = 6;
+        mesh.position.set(xOffset, yOffset, item.z);
+        mesh.rotation.y = -side * 0.04;
+        mesh.userData.baseY = yOffset;
+      } else {
+        // On desktop: balanced editorial stagger with clear sightlines
+        const xOffset = side * (30 + (i % 2) * 8);
+        const yOffset = ((i % 3) - 1) * 11 + 4;
+        mesh.position.set(xOffset, yOffset, item.z);
+        mesh.rotation.y = -side * 0.1;
+        mesh.userData.baseY = yOffset;
+      }
+
+      linePoints.push(mesh.position.x, mesh.position.y, mesh.position.z);
+    });
+
+    lineGeo.setAttribute("position", new THREE.Float32BufferAttribute(linePoints, 3));
+  }
+
+  layoutCards();
+
+  // Camera & Input State
+  let targetCamZ = START_Z;
+  let currentCamZ = START_Z;
   let targetMouseX = 0;
   let targetMouseY = 0;
   let currentMouseX = 0;
@@ -293,11 +321,28 @@
   const hud = document.getElementById("hud");
   const hudText = document.getElementById("hud-text");
 
+  function syncFlightState() {
+    // Hero hides as soon as user scrolls into the cosmos
+    if (targetCamZ < 390) {
+      document.body.classList.add("flying");
+    } else {
+      document.body.classList.remove("flying");
+    }
+
+    // Check if user has scrolled past the 8th milestone into the End Song / Finale
+    if (targetCamZ <= -1500) {
+      document.body.classList.add("at-end");
+    } else {
+      document.body.classList.remove("at-end");
+    }
+  }
+
   window.addEventListener("pointermove", (e) => {
+    if (isMobileView()) return;
     const nx = (e.clientX / window.innerWidth) * 2 - 1;
     const ny = -(e.clientY / window.innerHeight) * 2 + 1;
-    targetMouseX = nx * 34;
-    targetMouseY = ny * 22;
+    targetMouseX = nx * 24;
+    targetMouseY = ny * 14;
 
     mouseVec.x = nx;
     mouseVec.y = ny;
@@ -310,78 +355,117 @@
 
   window.addEventListener("wheel", (e) => {
     if (document.body.classList.contains("boxed")) return;
-    targetCamZ -= e.deltaY * 0.48;
-    targetCamZ = Math.max(-720, Math.min(460, targetCamZ));
-
-    if (targetCamZ < 360) {
-      document.body.classList.add("flying");
-    } else {
-      document.body.classList.remove("flying");
-    }
+    targetCamZ -= e.deltaY * 0.55;
+    targetCamZ = Math.max(END_Z, Math.min(START_Z, targetCamZ));
+    syncFlightState();
   }, { passive: true });
 
   let touchStartY = 0;
+  let touchStartX = 0;
+  let touchMoved = false;
+
   window.addEventListener("touchstart", (e) => {
-    if (e.touches.length > 0) touchStartY = e.touches[0].clientY;
+    if (e.touches.length > 0) {
+      touchStartY = e.touches[0].clientY;
+      touchStartX = e.touches[0].clientX;
+      touchMoved = false;
+    }
   }, { passive: true });
 
   window.addEventListener("touchmove", (e) => {
     if (document.body.classList.contains("boxed")) return;
     if (e.touches.length > 0) {
-      const delta = touchStartY - e.touches[0].clientY;
+      const dy = touchStartY - e.touches[0].clientY;
+      const dx = Math.abs(touchStartX - e.touches[0].clientX);
+      if (Math.abs(dy) > 4) touchMoved = true;
+      // Ignore horizontal swipes on the impact pill strip
+      if (dx > Math.abs(dy) * 1.5) return;
+
       touchStartY = e.touches[0].clientY;
-      targetCamZ -= delta * 0.85;
-      targetCamZ = Math.max(-720, Math.min(460, targetCamZ));
-      if (targetCamZ < 360) document.body.classList.add("flying");
-      else document.body.classList.remove("flying");
+      targetCamZ -= dy * 1.15;
+      targetCamZ = Math.max(END_Z, Math.min(START_Z, targetCamZ));
+      syncFlightState();
     }
   }, { passive: true });
 
-  canvas.addEventListener("click", () => {
-    if (hoveredMesh && window.openSystemDetail) {
-      window.openSystemDetail(hoveredMesh.userData.index);
+  canvas.addEventListener("click", (e) => {
+    if (touchMoved) return;
+    const nx = (e.clientX / window.innerWidth) * 2 - 1;
+    const ny = -(e.clientY / window.innerHeight) * 2 + 1;
+    raycaster.setFromCamera(new THREE.Vector2(nx, ny), camera);
+    const hits = raycaster.intersectObjects(cardMeshes);
+    if (hits.length > 0 && window.openSystemDetail) {
+      const hitMesh = hits[0].object;
+      if (hitMesh.material.opacity > 0.25) {
+        window.openSystemDetail(hitMesh.userData.index);
+      }
     }
   });
 
   window.flyToPrev = function() {
-    targetCamZ = Math.min(460, targetCamZ + 150);
-    if (targetCamZ >= 360) document.body.classList.remove("flying");
+    if (document.body.classList.contains("at-end")) {
+      window.flyToMilestone(milestones.length - 1);
+      return;
+    }
+    const cur = window.currentActiveMilestoneIndex || 0;
+    if (cur <= 0) {
+      window.flyToTop();
+    } else {
+      window.flyToMilestone(cur - 1);
+    }
   };
 
   window.flyToNext = function() {
-    targetCamZ = Math.max(-720, targetCamZ - 150);
-    document.body.classList.add("flying");
+    const cur = window.currentActiveMilestoneIndex || 0;
+    if (!document.body.classList.contains("flying")) {
+      window.flyToMilestone(0);
+    } else if (cur < milestones.length - 1) {
+      window.flyToMilestone(cur + 1);
+    } else {
+      // Fly to the End Song Finale
+      targetCamZ = END_Z;
+      syncFlightState();
+    }
   };
 
   window.flyToStart = function() {
-    targetCamZ = 240;
-    document.body.classList.add("flying");
+    window.flyToMilestone(0);
+  };
+
+  window.flyToTop = function() {
+    targetCamZ = START_Z;
+    syncFlightState();
   };
 
   window.flyToMilestone = function(idx) {
     if (milestones[idx]) {
-      targetCamZ = milestones[idx].z + 170;
-      document.body.classList.add("flying");
+      const viewDist = isMobileView() ? 165 : 145;
+      targetCamZ = milestones[idx].z + viewDist;
+      syncFlightState();
     }
   };
 
   window.addEventListener("resize", () => {
+    camera.fov = isMobileView() ? 58 : 45;
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    layoutCards();
   });
 
   const flybarNum = document.getElementById("now-num");
   const flybarTitle = document.getElementById("now-title");
   const flybarSub = document.getElementById("now-sub");
+  const flybarProgress = document.getElementById("fly-progress-fill");
 
   function updateFlybar(camZ) {
     if (!flybarNum || !flybarTitle) return;
+    const viewDist = isMobileView() ? 165 : 145;
     let bestIdx = 0;
     let minDiff = 99999;
     milestones.forEach((m, idx) => {
-      const diff = Math.abs(m.z - (camZ - 170));
+      const diff = Math.abs(m.z - (camZ - viewDist));
       if (diff < minDiff) {
         minDiff = diff;
         bestIdx = idx;
@@ -393,6 +477,11 @@
     flybarNum.textContent = `0${bestIdx + 1}`;
     flybarTitle.textContent = active.name;
     flybarSub.textContent = `${active.category}  •  ${active.stat}`;
+
+    if (flybarProgress) {
+      const pct = Math.max(0, Math.min(100, ((START_Z - camZ) / (START_Z - END_Z)) * 100));
+      flybarProgress.style.width = `${pct}%`;
+    }
   }
 
   let lastTime = performance.now();
@@ -402,43 +491,79 @@
     const dt = Math.min(0.1, (now - lastTime) / 1000);
     lastTime = now;
 
-    currentCamZ += (targetCamZ - currentCamZ) * 0.08;
+    currentCamZ += (targetCamZ - currentCamZ) * 0.085;
     currentMouseX += (targetMouseX - currentMouseX) * 0.06;
     currentMouseY += (targetMouseY - currentMouseY) * 0.06;
 
     camera.position.z = currentCamZ;
     camera.position.x = currentMouseX;
     camera.position.y = currentMouseY;
-    camera.lookAt(currentMouseX * 0.28, currentMouseY * 0.28, currentCamZ - 300);
+    camera.lookAt(currentMouseX * 0.25, currentMouseY * 0.25, currentCamZ - 300);
 
-    particleSystem.rotation.z += dt * 0.012;
+    particleSystem.rotation.z += dt * 0.008;
+
+    const isLanding = !document.body.classList.contains("flying");
+    const isAtEnd = document.body.classList.contains("at-end");
 
     cardMeshes.forEach((mesh, idx) => {
-      mesh.position.y += Math.sin(now * 0.0014 + idx) * 0.028;
+      // Gentle float around baseY
+      mesh.position.y = mesh.userData.baseY + Math.sin(now * 0.0014 + idx) * 1.4;
+
+      // Distance-based opacity so cards never look cluttered or stacked on top of each other
+      const distAhead = currentCamZ - mesh.position.z;
+      let targetOpacity = 0;
+
+      if (isAtEnd) {
+        targetOpacity = 0.06;
+      } else if (isLanding) {
+        // On landing screen, keep background cards subtle so hero text is 100% clean
+        targetOpacity = idx === 0 ? 0.38 : idx === 1 ? 0.18 : 0.06;
+      } else if (distAhead < 45) {
+        // Passing or behind camera
+        targetOpacity = Math.max(0, (distAhead - 15) / 30);
+      } else if (distAhead <= 240) {
+        // Active focal zone
+        targetOpacity = 0.98;
+      } else if (distAhead <= 520) {
+        // Next card in queue (soft preview)
+        targetOpacity = 0.22 + (1 - (distAhead - 240) / 280) * 0.45;
+      } else {
+        // Deep background cards
+        targetOpacity = 0.08;
+      }
+
+      mesh.material.opacity += (targetOpacity - mesh.material.opacity) * 0.12;
     });
 
-    raycaster.setFromCamera(mouseVec, camera);
-    const intersects = raycaster.intersectObjects(cardMeshes);
+    if (!isMobileView() && !isLanding && !isAtEnd) {
+      raycaster.setFromCamera(mouseVec, camera);
+      const intersects = raycaster.intersectObjects(cardMeshes);
 
-    if (intersects.length > 0) {
-      const top = intersects[0].object;
-      if (hoveredMesh !== top) {
-        if (hoveredMesh) hoveredMesh.scale.set(1, 1, 1);
-        hoveredMesh = top;
-        hoveredMesh.scale.set(1.05, 1.05, 1.05);
-        canvas.classList.add("clickable");
-        if (hud && hudText) {
-          hudText.textContent = `${hoveredMesh.userData.item.name} (${hoveredMesh.userData.item.stat}) • Click to open`;
-          hud.classList.add("show");
+      if (intersects.length > 0 && intersects[0].object.material.opacity > 0.35) {
+        const top = intersects[0].object;
+        if (hoveredMesh !== top) {
+          if (hoveredMesh) hoveredMesh.scale.set(1, 1, 1);
+          hoveredMesh = top;
+          hoveredMesh.scale.set(1.04, 1.04, 1.04);
+          canvas.classList.add("clickable");
+          if (hud && hudText) {
+            hudText.textContent = `${hoveredMesh.userData.item.name} (${hoveredMesh.userData.item.stat}) • Click to inspect`;
+            hud.classList.add("show");
+          }
+        }
+      } else {
+        if (hoveredMesh) {
+          hoveredMesh.scale.set(1, 1, 1);
+          hoveredMesh = null;
+          canvas.classList.remove("clickable");
+          if (hud) hud.classList.remove("show");
         }
       }
-    } else {
-      if (hoveredMesh) {
-        hoveredMesh.scale.set(1, 1, 1);
-        hoveredMesh = null;
-        canvas.classList.remove("clickable");
-        if (hud) hud.classList.remove("show");
-      }
+    } else if (hoveredMesh) {
+      hoveredMesh.scale.set(1, 1, 1);
+      hoveredMesh = null;
+      canvas.classList.remove("clickable");
+      if (hud) hud.classList.remove("show");
     }
 
     updateFlybar(currentCamZ);

@@ -1,0 +1,15 @@
+# Lakshay Papneja
+
+> Systems engineer building autonomous data infrastructure, web automation engines, and agent-native protocols.
+
+## Canonical Links
+- Website: https://lakshaypapneja.me
+- Scrapers Hub: https://scrapers.tech
+- GitHub: https://github.com/ylc27lakshaypapneja-hue
+- Apify Store Profile: https://apify.com/laborious_rumor
+- Email: thefinancialnerds@gmail.com
+
+## Selected Systems
+- Scrapers.tech: Production catalog of 24 autonomous cloud scrapers and MCP endpoints.
+- Apify Actors: 24 monetized public actors under Pay-Per-Event pricing.
+- Model Context Protocol: Native MCP tooling connecting frontier LLM reasoning agents to live web intelligence.

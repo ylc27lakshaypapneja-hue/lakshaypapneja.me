@@ -179,15 +179,15 @@
   <!-- End-of-Scroll Finale Overlay ("The End Song") -->
   <div class="outro-overlay" id="outro-overlay" aria-live="polite">
     <div class="outro-card">
-      <button type="button" class="outro-badge" id="outro-audio-btn" onclick="window.toggleEndSong && window.toggleEndSong()" title="Play or mute the End Song & Voice">
+      <button type="button" class="outro-badge" id="outro-audio-btn" onclick="window.toggleEndSong && window.toggleEndSong()" title="Play or mute 'This Is The End'">
         <span class="eq-bars" id="outro-eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
-        <span id="outro-badge-txt">🔊 Tap to Play End Song &amp; Voice</span>
+        <span id="outro-badge-txt">🔊 Play "This Is The End"</span>
       </button>
 
-      <h2 class="outro-title">That was the <em>end song.</em></h2>
+      <h2 class="outro-title">“This is the <em>end...”</em></h2>
 
       <p class="outro-punchline">
-        You’ve scrolled to the edge of the cosmos. Either you’re convinced, or your scroll wheel is broken — <strong>no post-credits scene, unless we write the next verse together.</strong>
+        <em>Beautiful friend</em> — you’ve scrolled to the edge of the cosmos. That was the end song, <strong>not the end of the story. Let’s write the next chapter together.</strong>
       </p>
 
       <div class="outro-actions">
@@ -943,142 +943,103 @@
       window.location.href = `mailto:ylc27lakshay.papneja@mastersunion.org?subject=${subject}&body=${body}`;
     };
 
-    // ---------- End Song Ambient Synth + Voice Engine ----------
+    // ---------- "This Is The End" Song Audio Engine (The Doors) ----------
+    const endAudio = new Audio("this-is-the-end.m4a");
+    endAudio.preload = "auto";
+    endAudio.volume = 0.9;
+
     let audioCtx = null;
+    let decodedEndBuffer = null;
+    let activeBufferSource = null;
     let endSongPlaying = false;
-    let endSongTimer = null;
-    let activeOscillators = [];
+
+    // Preload & decode into Web Audio buffer so scroll-triggered playback works seamlessly
+    (function preloadEndSongBuffer() {
+      const AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return;
+      audioCtx = new AC();
+      fetch("this-is-the-end.m4a")
+        .then(r => r.arrayBuffer())
+        .then(buf => audioCtx.decodeAudioData(buf))
+        .then(decoded => { decodedEndBuffer = decoded; })
+        .catch(() => {});
+    })();
 
     function unlockAudio() {
-      if (!audioCtx) {
-        const AC = window.AudioContext || window.webkitAudioContext;
-        if (AC) audioCtx = new AC();
-      }
       if (audioCtx && audioCtx.state === "suspended") {
         audioCtx.resume().catch(() => {});
       }
     }
 
-    window.addEventListener("pointerdown", unlockAudio, { passive: true });
-    window.addEventListener("keydown", unlockAudio, { passive: true });
+    ["pointerdown", "touchstart", "touchend", "click", "keydown", "wheel"].forEach(evt => {
+      window.addEventListener(evt, unlockAudio, { passive: true });
+    });
 
-    function playChordNote(freq, startTime, duration, vol) {
-      if (!audioCtx) return;
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      const filter = audioCtx.createBiquadFilter();
-
-      osc.type = "triangle";
-      osc.frequency.setValueAtTime(freq, startTime);
-
-      filter.type = "lowpass";
-      filter.frequency.setValueAtTime(1100, startTime);
-
-      gain.gain.setValueAtTime(0.0001, startTime);
-      gain.gain.exponentialRampToValueAtTime(vol, startTime + 0.18);
-      gain.gain.exponentialRampToValueAtTime(0.0001, startTime + duration);
-
-      osc.connect(filter);
-      filter.connect(gain);
-      gain.connect(audioCtx.destination);
-
-      osc.start(startTime);
-      osc.stop(startTime + duration + 0.05);
-      activeOscillators.push(osc);
+    function setBadgeState(playing) {
+      endSongPlaying = playing;
+      const badgeTxt = document.getElementById("outro-badge-txt");
+      if (!badgeTxt) return;
+      badgeTxt.textContent = playing
+        ? "🔊 Playing: “This Is The End” • Tap to Mute"
+        : "🔊 Play “This Is The End”";
     }
 
+    endAudio.addEventListener("ended", () => setBadgeState(false));
+
     window.stopEndSong = function() {
-      endSongPlaying = false;
-      if (endSongTimer) {
-        clearTimeout(endSongTimer);
-        endSongTimer = null;
+      if (activeBufferSource) {
+        try { activeBufferSource.stop(); } catch (e) {}
+        activeBufferSource = null;
       }
-      activeOscillators.forEach(o => {
-        try { o.stop(); } catch (e) {}
-      });
-      activeOscillators = [];
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.cancel();
-      }
-      const badgeTxt = document.getElementById("outro-badge-txt");
-      if (badgeTxt) badgeTxt.textContent = "🔊 Tap to Play End Song & Voice";
+      try {
+        endAudio.pause();
+        endAudio.currentTime = 0;
+      } catch (e) {}
+      setBadgeState(false);
     };
 
-    window.playEndSong = function(isAuto) {
+    window.playEndSong = function() {
       unlockAudio();
       if (endSongPlaying) return;
 
-      const badgeTxt = document.getElementById("outro-badge-txt");
-
-      // Play warm ambient outro chords (Fmaj7 -> Em7 -> Dm7 -> Cmaj7)
-      if (audioCtx && audioCtx.state === "running") {
-        endSongPlaying = true;
-        if (badgeTxt) badgeTxt.textContent = "🔊 Playing End Song • Tap to Mute";
-
-        const now = audioCtx.currentTime + 0.05;
-        const progression = [
-          [174.61, 220.00, 261.63, 329.63, 392.00], // Fmaj9
-          [164.81, 196.00, 246.94, 293.66, 392.00], // Em7
-          [146.83, 174.61, 220.00, 261.63, 329.63], // Dm9
-          [130.81, 164.81, 196.00, 246.94, 293.66]  // Cmaj9
-        ];
-
-        progression.forEach((chord, cIdx) => {
-          const chordStart = now + cIdx * 2.2;
-          chord.forEach((freq, nIdx) => {
-            playChordNote(freq, chordStart + nIdx * 0.14, 2.4, 0.045);
-          });
-        });
-
-        endSongTimer = setTimeout(() => {
-          endSongPlaying = false;
-          if (badgeTxt) badgeTxt.textContent = "🔊 Replay End Song & Voice";
-        }, 9500);
-      }
-
-      // Speak the voiceover outro line
-      if ("speechSynthesis" in window) {
+      // 1. Prefer Web Audio decoded buffer if AudioContext is unlocked & running
+      if (audioCtx && audioCtx.state === "running" && decodedEndBuffer) {
         try {
-          window.speechSynthesis.cancel();
-          const utter = new SpeechSynthesisUtterance(
-            "And that was the end song. Eight milestones down — from New York venture capital to Dubai hedge funds and Masters' Union. The scroll is over. Now, let's write the next verse together."
-          );
-          utter.rate = 0.96;
-          utter.pitch = 0.95;
-          utter.volume = 0.95;
-
-          const voices = window.speechSynthesis.getVoices();
-          const preferred = voices.find(v =>
-            /Daniel|Alex|Aaron|Samantha|Google UK English Male|Google US English/i.test(v.name)
-          );
-          if (preferred) utter.voice = preferred;
-
-          utter.onstart = () => {
-            endSongPlaying = true;
-            if (badgeTxt) badgeTxt.textContent = "🔊 Playing End Song • Tap to Mute";
-          };
-          utter.onend = () => {
-            if (!endSongPlaying && badgeTxt) {
-              badgeTxt.textContent = "🔊 Replay End Song & Voice";
+          if (activeBufferSource) {
+            try { activeBufferSource.stop(); } catch (e) {}
+          }
+          const src = audioCtx.createBufferSource();
+          src.buffer = decodedEndBuffer;
+          src.connect(audioCtx.destination);
+          src.onended = () => {
+            if (activeBufferSource === src) {
+              activeBufferSource = null;
+              setBadgeState(false);
             }
           };
-          window.speechSynthesis.speak(utter);
+          activeBufferSource = src;
+          src.start(0);
+          setBadgeState(true);
+          return;
         } catch (e) {}
       }
+
+      // 2. Fallback to HTML5 <audio> element
+      endAudio.currentTime = 0;
+      endAudio.play()
+        .then(() => setBadgeState(true))
+        .catch(() => setBadgeState(false));
     };
 
     window.toggleEndSong = function() {
-      if (endSongPlaying || ("speechSynthesis" in window && window.speechSynthesis.speaking)) {
+      if (endSongPlaying) {
         window.stopEndSong();
       } else {
-        window.playEndSong(false);
+        window.playEndSong();
       }
     };
 
     window.addEventListener("load", () => {
-      if ("speechSynthesis" in window) {
-        window.speechSynthesis.getVoices();
-      }
       setTimeout(() => {
         const loader = document.getElementById("loader");
         if (loader) loader.classList.add("done");

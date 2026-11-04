@@ -145,6 +145,11 @@ button {
   color: var(--ink);
 }
 
+.status-pill .status-role {
+  color: #fff;
+  font-weight: 500;
+}
+
 .status-pill .sep {
   opacity: 0.35;
 }
@@ -278,6 +283,31 @@ body.boxed .hero {
   align-items: flex-end;
   gap: 24px;
   margin-bottom: clamp(10px, 1.8vh, 20px);
+}
+
+.hero-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  max-width: 530px;
+}
+
+.hero-open-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: rgba(52, 211, 153, 0.08);
+  border: 1px solid rgba(52, 211, 153, 0.28);
+  color: #34d399;
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  pointer-events: auto;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
 }
 
 .lead {

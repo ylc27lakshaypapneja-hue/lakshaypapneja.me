@@ -84,7 +84,7 @@
       name: "Pegster & Scrapers.tech",
       category: "0-to-1 Ventures  •  E-Commerce & AI",
       stat: "₹4L+ Sales in 2 Mo",
-      desc: "Scaled Pegster D2C to ₹4,00,000+ in 2 months. Architected Scrapers.tech (39 live cloud actors) & 500K+ organic finance channel views.",
+      desc: "Scaled Pegster D2C to ₹4,00,000+ in 2 months. Architected Scrapers.tech (40 live cloud actors) & 500K+ organic finance channel views.",
       color: "#2dd4bf",
       z: -1040
     },

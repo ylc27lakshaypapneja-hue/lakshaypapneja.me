@@ -54,7 +54,7 @@
   - Scaled finance and personal growth YouTube channel to 2,000+ subscribers
   - Drove 500,000+ cumulative views through Reels and Shorts sharing business breakdowns and case studies
 - **Scrapers.tech & Apify Automation Fleet** | 2026
-  - Built Scrapers.tech and published 68 public monetized cloud actors on Apify Store
+  - Built Scrapers.tech and published 73 public monetized cloud actors on Apify Store
 
 ## Achievements
 - **Josh Talks & Podcasts (10M+ Subscribers)** | 2023: Invited speaker on equity markets & investing psychology; garnered 2M+ views and 5M+ impressions across platforms
